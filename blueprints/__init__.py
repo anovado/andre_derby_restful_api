@@ -79,5 +79,7 @@ def after_request(response) :
 from blueprints.conversion.resources import bp_conversion
 app.register_blueprint(bp_conversion, url_prefix='/conversion')
 
+from blueprints.amazon.resources import bp_amazon
+app.register_blueprint(bp_amazon, url_prefix='/amazon')
 
 # db.create_all()
