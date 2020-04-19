@@ -21,7 +21,7 @@ class GetConversion(Resource):
         }
         response = requests.request("GET", self.url, headers=headers, data = payload)
         data = response.json()
-        price = 15446
+        price = 512412
         data_list = data['currency_rates']
         rows = []
         for _, (ky, val) in enumerate(data_list.items()) :
