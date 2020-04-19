@@ -27,6 +27,11 @@ migrate = Migrate(app, db)
 manager = Manager(app)
 manager.add_command('db', MigrateCommand)
 
+if os.environ.get('FLASK_ENV', 'Production') == "Production":
+    app.config.from_object(config.ProductionConfig)
+else:
+    app.config.from_object(config.DevelopmentConfig)
+    
 
 @app.after_request
 def after_request(response) :
