@@ -17,25 +17,3 @@ if __name__ == '__main__':
         log_handler.setFormatter(formatter)
         app.logger.addHandler(log_handler)
         app.run(debug=False, host='0.0.0.0', port=5050)
-
-
-# import requests
-
-# url = "https://currency-value.p.rapidapi.com/global/currency_rates"
-
-# payload = "{\n\t\"from\": \"USD\",\n    \"to\": \"HKD\"\n}"
-# headers = {
-#   'x-rapidapi-host': 'currency-value.p.rapidapi.com',
-#   'x-rapidapi-key': '5f6997638bmsh0072972d1fcfa8bp129664jsn47872153a2b4',
-#   'Content-Type': 'application/json'
-# }
-
-# response = requests.request("GET", url, headers=headers, data = payload)
-# data = response.json()
-# price = 15446
-# data_list = data['currency_rates']
-# rows = []
-# for _, (ky, val) in enumerate(data_list.items()) :
-#   rows.append('%s => %f' % (ky, price*data['currency_rates']['IDR']/val))
-
-
