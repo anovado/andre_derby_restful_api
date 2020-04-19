@@ -39,3 +39,4 @@ Traceback (most recent call last):
     'x-rapidapi-host' : app.config['x_host'],
 KeyError: 'x_host'
 [2020-04-19 11:59:58,898]{/home/andrenovado/Documents/Coding/Alterra/andre_derby_restful_api/blueprints/__init__.py:66} ERROR - 
+[2020-04-19 15:02:09,057]{/home/alta8/Documents/RESTAPI/andre_derby_restful_api/blueprints/__init__.py:44} WARNING - REQUEST_LOG	{"method": "GET", "code": "200 OK", "uri": "/conversion/con?currency=INR", "request": null, "response": ["INR => 2518.853553"]}
