@@ -22,6 +22,9 @@ class Config():
     KEY_MATAUANG = cfg['matauang']['key1']
     X_HOST = cfg['amazon']['host2']
     X_APIKEY = cfg['amazon']['key2']
+    EMAIL_KEY = cfg['email']['api_key']
+    EMAIL_SECRET = cfg['email']['api_secret']
+    
     
 class DevelopmentConfig(Config):
     APP_DEBUG = True

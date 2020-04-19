@@ -1,120 +1,81 @@
-[2020-04-18 21:13:18,555]{/home/alta8/.local/lib/python3.6/site-packages/flask/app.py:1892} ERROR - Exception on /conversion/con [GET]
+[2020-04-19 16:25:45,079]{/home/andrenovado/Documents/Coding/Alterra/andre_derby_restful_api/blueprints/__init__.py:59} ERROR - REQUEST_LOG	{"method": "GET", "code": "500 INTERNAL SERVER ERROR", "uri": "/conversion/con?keywords=table&marketplace=US&currency=USD", "request": null, "response": {"message": "Internal Server Error"}}
+[2020-04-19 16:27:04,854]{/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask/app.py:1892} ERROR - Exception on /conversion/con [GET]
 Traceback (most recent call last):
-  File "/home/alta8/.local/lib/python3.6/site-packages/flask/app.py", line 1950, in full_dispatch_request
+  File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask/app.py", line 1950, in full_dispatch_request
     rv = self.dispatch_request()
-  File "/home/alta8/.local/lib/python3.6/site-packages/flask/app.py", line 1936, in dispatch_request
+  File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask/app.py", line 1936, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/alta8/.local/lib/python3.6/site-packages/flask_restful/__init__.py", line 468, in wrapper
+  File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask_restful/__init__.py", line 468, in wrapper
     resp = resource(*args, **kwargs)
-  File "/home/alta8/.local/lib/python3.6/site-packages/flask/views.py", line 89, in view
+  File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask/views.py", line 89, in view
     return self.dispatch_request(*args, **kwargs)
-  File "/home/alta8/.local/lib/python3.6/site-packages/flask_restful/__init__.py", line 583, in dispatch_request
+  File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask_restful/__init__.py", line 583, in dispatch_request
     resp = meth(*args, **kwargs)
-  File "/home/alta8/Documents/RESTAPI/blueprints/conversion/resources.py", line 23, in get
-    data_list = data['currency_rates']
-KeyError: 'currency_rates'
-[2020-04-18 21:13:18,558]{/home/alta8/Documents/RESTAPI/blueprints/__init__.py:66} ERROR - 
-[2020-04-18 21:17:24,167]{/home/alta8/.local/lib/python3.6/site-packages/flask/app.py:1892} ERROR - Exception on /conversion/con [GET]
+  File "/home/andrenovado/Documents/Coding/Alterra/andre_derby_restful_api/blueprints/conversion/resources.py", line 19, in get
+    search_result = amazon_api[0][0]
+TypeError: 'GetPriceReport' object does not support indexing
+[2020-04-19 16:27:04,855]{/home/andrenovado/Documents/Coding/Alterra/andre_derby_restful_api/blueprints/__init__.py:59} ERROR - REQUEST_LOG	{"method": "GET", "code": "500 INTERNAL SERVER ERROR", "uri": "/conversion/con?keywords=table&marketplace=US&currency=USD", "request": null, "response": {"message": "Internal Server Error"}}
+[2020-04-19 16:35:42,622]{/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask/app.py:1892} ERROR - Exception on /conversion/con [GET]
 Traceback (most recent call last):
-  File "/home/alta8/.local/lib/python3.6/site-packages/flask/app.py", line 1950, in full_dispatch_request
+  File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask/app.py", line 1950, in full_dispatch_request
     rv = self.dispatch_request()
-  File "/home/alta8/.local/lib/python3.6/site-packages/flask/app.py", line 1936, in dispatch_request
+  File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask/app.py", line 1936, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/alta8/.local/lib/python3.6/site-packages/flask_restful/__init__.py", line 468, in wrapper
+  File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask_restful/__init__.py", line 468, in wrapper
     resp = resource(*args, **kwargs)
-  File "/home/alta8/.local/lib/python3.6/site-packages/flask/views.py", line 89, in view
+  File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask/views.py", line 89, in view
     return self.dispatch_request(*args, **kwargs)
-  File "/home/alta8/.local/lib/python3.6/site-packages/flask_restful/__init__.py", line 583, in dispatch_request
+  File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask_restful/__init__.py", line 583, in dispatch_request
     resp = meth(*args, **kwargs)
-  File "/home/alta8/Documents/RESTAPI/blueprints/conversion/resources.py", line 23, in get
-    data_list = data['currency_rates']
-KeyError: 'currency_rates'
-[2020-04-18 21:17:24,171]{/home/alta8/Documents/RESTAPI/blueprints/__init__.py:66} ERROR - 
-[2020-04-18 21:18:04,127]{/home/alta8/Documents/RESTAPI/blueprints/__init__.py:62} WARNING - REQUEST_LOG	{"method": "GET", "code": "200 OK", "uri": "/conversion/con?currency=USD", "request": null, "response": {"message": "Missing RapidAPI application key. Go to https://docs.rapidapi.com/docs/keys to learn how to get your API application key."}}
-[2020-04-18 21:19:14,410]{/home/alta8/.local/lib/python3.6/site-packages/flask/app.py:1892} ERROR - Exception on /conversion/con [GET]
+  File "/home/andrenovado/Documents/Coding/Alterra/andre_derby_restful_api/blueprints/conversion/resources.py", line 20, in get
+    search_result = GetPriceReport.data[0]
+AttributeError: type object 'GetPriceReport' has no attribute 'data'
+[2020-04-19 16:35:42,625]{/home/andrenovado/Documents/Coding/Alterra/andre_derby_restful_api/blueprints/__init__.py:59} ERROR - REQUEST_LOG	{"method": "GET", "code": "500 INTERNAL SERVER ERROR", "uri": "/conversion/con?keywords=table&marketplace=US&currency=USD", "request": null, "response": {"message": "Internal Server Error"}}
+[2020-04-19 16:37:11,926]{/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask/app.py:1892} ERROR - Exception on /conversion/con [GET]
 Traceback (most recent call last):
-  File "/home/alta8/.local/lib/python3.6/site-packages/flask/app.py", line 1950, in full_dispatch_request
+  File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask/app.py", line 1950, in full_dispatch_request
     rv = self.dispatch_request()
-  File "/home/alta8/.local/lib/python3.6/site-packages/flask/app.py", line 1936, in dispatch_request
+  File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask/app.py", line 1936, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/alta8/.local/lib/python3.6/site-packages/flask_restful/__init__.py", line 472, in wrapper
-    return self.make_response(data, code, headers=headers)
-  File "/home/alta8/.local/lib/python3.6/site-packages/flask_restful/__init__.py", line 501, in make_response
-    resp = self.representations[mediatype](data, *args, **kwargs)
-  File "/home/alta8/.local/lib/python3.6/site-packages/flask_restful/representations/json.py", line 21, in output_json
-    dumped = dumps(data, **settings) + "\n"
-  File "/usr/lib/python3.6/json/__init__.py", line 231, in dumps
-    return _default_encoder.encode(obj)
-  File "/usr/lib/python3.6/json/encoder.py", line 199, in encode
-    chunks = self.iterencode(o, _one_shot=True)
-  File "/usr/lib/python3.6/json/encoder.py", line 257, in iterencode
-    return _iterencode(o, 0)
-  File "/usr/lib/python3.6/json/encoder.py", line 180, in default
-    o.__class__.__name__)
-TypeError: Object of type 'Response' is not JSON serializable
-[2020-04-18 21:19:14,412]{/home/alta8/Documents/RESTAPI/blueprints/__init__.py:66} ERROR - 
-[2020-04-18 21:19:33,725]{/home/alta8/Documents/RESTAPI/blueprints/__init__.py:62} WARNING - REQUEST_LOG	{"method": "GET", "code": "200 OK", "uri": "/conversion/con?currency=USD", "request": null, "response": {"message": "Missing RapidAPI application key. Go to https://docs.rapidapi.com/docs/keys to learn how to get your API application key."}}
-[2020-04-18 21:25:01,080]{/home/alta8/.local/lib/python3.6/site-packages/flask/app.py:1892} ERROR - Exception on /conversion/con [GET]
-Traceback (most recent call last):
-  File "/home/alta8/.local/lib/python3.6/site-packages/flask/app.py", line 1950, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/home/alta8/.local/lib/python3.6/site-packages/flask/app.py", line 1936, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/alta8/.local/lib/python3.6/site-packages/flask_restful/__init__.py", line 468, in wrapper
+  File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask_restful/__init__.py", line 468, in wrapper
     resp = resource(*args, **kwargs)
-  File "/home/alta8/.local/lib/python3.6/site-packages/flask/views.py", line 89, in view
+  File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask/views.py", line 89, in view
     return self.dispatch_request(*args, **kwargs)
-  File "/home/alta8/.local/lib/python3.6/site-packages/flask_restful/__init__.py", line 583, in dispatch_request
+  File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask_restful/__init__.py", line 583, in dispatch_request
     resp = meth(*args, **kwargs)
-  File "/home/alta8/Documents/RESTAPI/blueprints/conversion/resources.py", line 22, in get
-    data_list = data['currency_rates']
-KeyError: 'currency_rates'
-[2020-04-18 21:25:01,082]{/home/alta8/Documents/RESTAPI/blueprints/__init__.py:66} ERROR - 
-[2020-04-18 21:28:01,069]{/home/alta8/.local/lib/python3.6/site-packages/flask/app.py:1892} ERROR - Exception on /conversion/con [GET]
+  File "/home/andrenovado/Documents/Coding/Alterra/andre_derby_restful_api/blueprints/conversion/resources.py", line 20, in get
+    search_result = GetPriceReport.get[0]
+TypeError: 'function' object is not subscriptable
+[2020-04-19 16:37:11,929]{/home/andrenovado/Documents/Coding/Alterra/andre_derby_restful_api/blueprints/__init__.py:59} ERROR - REQUEST_LOG	{"method": "GET", "code": "500 INTERNAL SERVER ERROR", "uri": "/conversion/con?keywords=table&marketplace=US&currency=USD", "request": null, "response": {"message": "Internal Server Error"}}
+[2020-04-19 16:44:08,166]{/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask/app.py:1892} ERROR - Exception on /conversion/con [GET]
 Traceback (most recent call last):
-  File "/home/alta8/.local/lib/python3.6/site-packages/flask/app.py", line 1950, in full_dispatch_request
+  File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask/app.py", line 1950, in full_dispatch_request
     rv = self.dispatch_request()
-  File "/home/alta8/.local/lib/python3.6/site-packages/flask/app.py", line 1936, in dispatch_request
+  File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask/app.py", line 1936, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/alta8/.local/lib/python3.6/site-packages/flask_restful/__init__.py", line 468, in wrapper
+  File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask_restful/__init__.py", line 468, in wrapper
     resp = resource(*args, **kwargs)
-  File "/home/alta8/.local/lib/python3.6/site-packages/flask/views.py", line 89, in view
+  File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask/views.py", line 89, in view
     return self.dispatch_request(*args, **kwargs)
-  File "/home/alta8/.local/lib/python3.6/site-packages/flask_restful/__init__.py", line 583, in dispatch_request
+  File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask_restful/__init__.py", line 583, in dispatch_request
     resp = meth(*args, **kwargs)
-  File "/home/alta8/Documents/RESTAPI/blueprints/conversion/resources.py", line 22, in get
-    data_list = data['currency_rates']
-KeyError: 'currency_rates'
-[2020-04-18 21:28:01,070]{/home/alta8/Documents/RESTAPI/blueprints/__init__.py:66} ERROR - 
-[2020-04-18 21:28:26,770]{/home/alta8/.local/lib/python3.6/site-packages/flask/app.py:1892} ERROR - Exception on /conversion/con [GET]
+  File "/home/andrenovado/Documents/Coding/Alterra/andre_derby_restful_api/blueprints/conversion/resources.py", line 36, in get
+    rows.append('%s => %f' % (ky, price*data['currency_rates']['IDR']/val))
+TypeError: can't multiply sequence by non-int of type 'float'
+[2020-04-19 16:44:08,171]{/home/andrenovado/Documents/Coding/Alterra/andre_derby_restful_api/blueprints/__init__.py:59} ERROR - REQUEST_LOG	{"method": "GET", "code": "500 INTERNAL SERVER ERROR", "uri": "/conversion/con?keywords=table&marketplace=US&currency=USD", "request": null, "response": {"message": "Internal Server Error"}}
+[2020-04-19 16:45:01,620]{/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask/app.py:1892} ERROR - Exception on /conversion/con [GET]
 Traceback (most recent call last):
-  File "/home/alta8/.local/lib/python3.6/site-packages/flask/app.py", line 1950, in full_dispatch_request
+  File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask/app.py", line 1950, in full_dispatch_request
     rv = self.dispatch_request()
-  File "/home/alta8/.local/lib/python3.6/site-packages/flask/app.py", line 1936, in dispatch_request
+  File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask/app.py", line 1936, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/alta8/.local/lib/python3.6/site-packages/flask_restful/__init__.py", line 468, in wrapper
+  File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask_restful/__init__.py", line 468, in wrapper
     resp = resource(*args, **kwargs)
-  File "/home/alta8/.local/lib/python3.6/site-packages/flask/views.py", line 89, in view
+  File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask/views.py", line 89, in view
     return self.dispatch_request(*args, **kwargs)
-  File "/home/alta8/.local/lib/python3.6/site-packages/flask_restful/__init__.py", line 583, in dispatch_request
+  File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask_restful/__init__.py", line 583, in dispatch_request
     resp = meth(*args, **kwargs)
-  File "/home/alta8/Documents/RESTAPI/blueprints/conversion/resources.py", line 23, in get
-    data_list = data['currency_rates']['output']
-KeyError: 'currency_rates'
-[2020-04-18 21:28:26,773]{/home/alta8/Documents/RESTAPI/blueprints/__init__.py:66} ERROR - 
-[2020-04-18 21:29:09,061]{/home/alta8/.local/lib/python3.6/site-packages/flask/app.py:1892} ERROR - Exception on /conversion/con [GET]
-Traceback (most recent call last):
-  File "/home/alta8/.local/lib/python3.6/site-packages/flask/app.py", line 1950, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/home/alta8/.local/lib/python3.6/site-packages/flask/app.py", line 1936, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/alta8/.local/lib/python3.6/site-packages/flask_restful/__init__.py", line 468, in wrapper
-    resp = resource(*args, **kwargs)
-  File "/home/alta8/.local/lib/python3.6/site-packages/flask/views.py", line 89, in view
-    return self.dispatch_request(*args, **kwargs)
-  File "/home/alta8/.local/lib/python3.6/site-packages/flask_restful/__init__.py", line 583, in dispatch_request
-    resp = meth(*args, **kwargs)
-  File "/home/alta8/Documents/RESTAPI/blueprints/conversion/resources.py", line 23, in get
-    data_list = data['currency_rates']['output']
-KeyError: 'currency_rates'
-[2020-04-18 21:29:09,065]{/home/alta8/Documents/RESTAPI/blueprints/__init__.py:66} ERROR - 
+  File "/home/andrenovado/Documents/Coding/Alterra/andre_derby_restful_api/blueprints/conversion/resources.py", line 22, in get
+    currency = int(returned_data[1][1:])
+ValueError: invalid literal for int() with base 10: 'SD'
+[2020-04-19 16:45:01,623]{/home/andrenovado/Documents/Coding/Alterra/andre_derby_restful_api/blueprints/__init__.py:59} ERROR - REQUEST_LOG	{"method": "GET", "code": "500 INTERNAL SERVER ERROR", "uri": "/conversion/con?keywords=table&marketplace=US&currency=USD", "request": null, "response": {"message": "Internal Server Error"}}

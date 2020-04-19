@@ -76,4 +76,7 @@ app.register_blueprint(bp_conversion, url_prefix='/conversion')
 from blueprints.amazon.resources import bp_amazon
 app.register_blueprint(bp_amazon, url_prefix='/amazon')
 
+from blueprints.email.resources import bp_email
+app.register_blueprint(bp_email, url_prefix='/email')
+
 db.create_all()
