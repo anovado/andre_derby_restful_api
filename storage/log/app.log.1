@@ -1,5 +1,7 @@
-[2020-04-19 16:25:45,079]{/home/andrenovado/Documents/Coding/Alterra/andre_derby_restful_api/blueprints/__init__.py:59} ERROR - REQUEST_LOG	{"method": "GET", "code": "500 INTERNAL SERVER ERROR", "uri": "/conversion/con?keywords=table&marketplace=US&currency=USD", "request": null, "response": {"message": "Internal Server Error"}}
-[2020-04-19 16:27:04,854]{/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask/app.py:1892} ERROR - Exception on /conversion/con [GET]
+[2020-04-19 21:02:53,473]{/home/andrenovado/Documents/Coding/Alterra/andre_derby_restful_api/blueprints/__init__.py:49} WARNING - REQUEST_LOG	{"method": "GET", "code": "200 OK", "uri": "/conversion/con?keywords=phone&marketplace=FR&origin_currency=EUR&target_currency=IDR&name=Andre&email=andrenovado@gmail.com", "request": null, "response": {"ASIN": "B07KWX9GNV", "title": "Samsung Galaxy A10 Dual SIM 32GB 2GB RAM SM-A105F/DS Noir SIM Free", "price": "144,99\u00a0\u20ac", "listPrice": "", "imageUrl": "https://m.media-amazon.com/images/I/41XyhsqaWuL._SL160_.jpg", "detailPageURL": "https://www.amazon.fr/dp/B07KWX9GNV", "rating": "4.5", "totalReviews": "2528", "subtitle": "", "isPrimeEligible": "1", "converted_price": "2444527.870759 IDR", "email_status": "sent"}}
+[2020-04-19 21:40:12,109]{/home/andrenovado/Documents/Coding/Alterra/andre_derby_restful_api/blueprints/__init__.py:49} WARNING - REQUEST_LOG	{"method": "GET", "code": "200 OK", "uri": "/conversion/con?keywords=phone&marketplace=FR&origin_currency=EUR&target_currency=IDR&name=Andre&email=andrenovado@gmail.com", "request": null, "response": {"ASIN": "B07KWX9GNV", "title": "Samsung Galaxy A10 Dual SIM 32GB 2GB RAM SM-A105F/DS Noir SIM Free", "price": "144,99\u00a0\u20ac", "listPrice": "", "imageUrl": "https://m.media-amazon.com/images/I/41XyhsqaWuL._SL160_.jpg", "detailPageURL": "https://www.amazon.fr/dp/B07KWX9GNV", "rating": "4.5", "totalReviews": "2528", "subtitle": "", "isPrimeEligible": "1", "converted_price": "2444527.870759 IDR", "email_status": "sent"}}
+[2020-04-19 21:42:48,186]{/home/andrenovado/Documents/Coding/Alterra/andre_derby_restful_api/blueprints/__init__.py:49} WARNING - REQUEST_LOG	{"method": "GET", "code": "200 OK", "uri": "/conversion/con?keywords=laptop&marketplace=US&origin_currency=USD&target_currency=EUR&name=Andre&email=derbyprayogo@gmail.com", "request": null, "response": {"ASIN": "B07RF1XD36", "title": "Acer Aspire 5 Slim Laptop, 15.6 inches Full HD IPS Display, AMD Ryzen 3 3200U, Vega 3 Graphics, 4GB DDR4, 128GB SSD, Backlit Keyboard, Windows 10 in S Mode, A515-43-R19L,Silver", "price": "$461.70", "listPrice": "", "imageUrl": "https://m.media-amazon.com/images/I/41vMYgD92xL._SL160_.jpg", "detailPageURL": "https://www.amazon.com/dp/B07RF1XD36", "rating": "4.5", "totalReviews": "4756", "subtitle": "", "isPrimeEligible": "0", "converted_price": "424.567340 EUR", "email_status": "sent"}}
+[2020-04-19 21:45:28,370]{/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask/app.py:1892} ERROR - Exception on /conversion/con [GET]
 Traceback (most recent call last):
   File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask/app.py", line 1950, in full_dispatch_request
     rv = self.dispatch_request()
@@ -11,11 +13,13 @@ Traceback (most recent call last):
     return self.dispatch_request(*args, **kwargs)
   File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask_restful/__init__.py", line 583, in dispatch_request
     resp = meth(*args, **kwargs)
-  File "/home/andrenovado/Documents/Coding/Alterra/andre_derby_restful_api/blueprints/conversion/resources.py", line 19, in get
-    search_result = amazon_api[0][0]
-TypeError: 'GetPriceReport' object does not support indexing
-[2020-04-19 16:27:04,855]{/home/andrenovado/Documents/Coding/Alterra/andre_derby_restful_api/blueprints/__init__.py:59} ERROR - REQUEST_LOG	{"method": "GET", "code": "500 INTERNAL SERVER ERROR", "uri": "/conversion/con?keywords=table&marketplace=US&currency=USD", "request": null, "response": {"message": "Internal Server Error"}}
-[2020-04-19 16:35:42,622]{/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask/app.py:1892} ERROR - Exception on /conversion/con [GET]
+  File "/home/andrenovado/Documents/Coding/Alterra/andre_derby_restful_api/blueprints/conversion/resources.py", line 43, in get
+    PostEmail().Post()
+  File "/home/andrenovado/Documents/Coding/Alterra/andre_derby_restful_api/blueprints/email/resources.py", line 45, in Post
+    "HTMLPart": f"<h2>{search_result['title']}</h2><br /><p>Price: {search_result['price']}</p><p>Converted Price: {search_result['converted_price']}</p><img src='{search_result['imageUrl']}' alt='Product image'><br /><p>Rating: {search_result['rating']}</p><p>Total Reviews: {search_result['totalReviews']}</p><br /><a href='{search_result['detailPageURL']}''>See more details here...</a>",
+KeyError: 'converted_price'
+[2020-04-19 21:45:28,376]{/home/andrenovado/Documents/Coding/Alterra/andre_derby_restful_api/blueprints/__init__.py:59} ERROR - REQUEST_LOG	{"method": "GET", "code": "500 INTERNAL SERVER ERROR", "uri": "/conversion/con?keywords=laptop&marketplace=US&origin_currency=USD&target_currency=EUR&name=Andre&email=derbyprayogo@gmail.com", "request": null, "response": {"message": "Internal Server Error"}}
+[2020-04-19 22:18:00,710]{/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask/app.py:1892} ERROR - Exception on /email/send [GET]
 Traceback (most recent call last):
   File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask/app.py", line 1950, in full_dispatch_request
     rv = self.dispatch_request()
@@ -25,13 +29,12 @@ Traceback (most recent call last):
     resp = resource(*args, **kwargs)
   File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask/views.py", line 89, in view
     return self.dispatch_request(*args, **kwargs)
-  File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask_restful/__init__.py", line 583, in dispatch_request
-    resp = meth(*args, **kwargs)
-  File "/home/andrenovado/Documents/Coding/Alterra/andre_derby_restful_api/blueprints/conversion/resources.py", line 20, in get
-    search_result = GetPriceReport.data[0]
-AttributeError: type object 'GetPriceReport' has no attribute 'data'
-[2020-04-19 16:35:42,625]{/home/andrenovado/Documents/Coding/Alterra/andre_derby_restful_api/blueprints/__init__.py:59} ERROR - REQUEST_LOG	{"method": "GET", "code": "500 INTERNAL SERVER ERROR", "uri": "/conversion/con?keywords=table&marketplace=US&currency=USD", "request": null, "response": {"message": "Internal Server Error"}}
-[2020-04-19 16:37:11,926]{/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask/app.py:1892} ERROR - Exception on /conversion/con [GET]
+  File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask_restful/__init__.py", line 573, in dispatch_request
+    assert meth is not None, 'Unimplemented method %r' % request.method
+AssertionError: Unimplemented method 'GET'
+[2020-04-19 22:18:00,711]{/home/andrenovado/Documents/Coding/Alterra/andre_derby_restful_api/blueprints/__init__.py:59} ERROR - REQUEST_LOG	{"method": "GET", "code": "500 INTERNAL SERVER ERROR", "uri": "/email/send?keywords=phone&marketplace=US&origin_currency=USD&target_currency=IDR&email=andrenovado@gmail.com&name=Andre", "request": null, "response": {"message": "Internal Server Error"}}
+[2020-04-19 22:18:17,900]{/home/andrenovado/Documents/Coding/Alterra/andre_derby_restful_api/blueprints/__init__.py:59} ERROR - REQUEST_LOG	{"method": "POST", "code": "405 METHOD NOT ALLOWED", "uri": "/email/send?keywords=phone&marketplace=US&origin_currency=USD&target_currency=IDR&email=andrenovado@gmail.com&name=Andre", "request": null, "response": {"message": "The method is not allowed for the requested URL."}}
+[2020-04-19 22:19:21,914]{/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask/app.py:1892} ERROR - Exception on /email/send [GET]
 Traceback (most recent call last):
   File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask/app.py", line 1950, in full_dispatch_request
     rv = self.dispatch_request()
@@ -41,41 +44,8 @@ Traceback (most recent call last):
     resp = resource(*args, **kwargs)
   File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask/views.py", line 89, in view
     return self.dispatch_request(*args, **kwargs)
-  File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask_restful/__init__.py", line 583, in dispatch_request
-    resp = meth(*args, **kwargs)
-  File "/home/andrenovado/Documents/Coding/Alterra/andre_derby_restful_api/blueprints/conversion/resources.py", line 20, in get
-    search_result = GetPriceReport.get[0]
-TypeError: 'function' object is not subscriptable
-[2020-04-19 16:37:11,929]{/home/andrenovado/Documents/Coding/Alterra/andre_derby_restful_api/blueprints/__init__.py:59} ERROR - REQUEST_LOG	{"method": "GET", "code": "500 INTERNAL SERVER ERROR", "uri": "/conversion/con?keywords=table&marketplace=US&currency=USD", "request": null, "response": {"message": "Internal Server Error"}}
-[2020-04-19 16:44:08,166]{/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask/app.py:1892} ERROR - Exception on /conversion/con [GET]
-Traceback (most recent call last):
-  File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask/app.py", line 1950, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask/app.py", line 1936, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask_restful/__init__.py", line 468, in wrapper
-    resp = resource(*args, **kwargs)
-  File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask/views.py", line 89, in view
-    return self.dispatch_request(*args, **kwargs)
-  File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask_restful/__init__.py", line 583, in dispatch_request
-    resp = meth(*args, **kwargs)
-  File "/home/andrenovado/Documents/Coding/Alterra/andre_derby_restful_api/blueprints/conversion/resources.py", line 36, in get
-    rows.append('%s => %f' % (ky, price*data['currency_rates']['IDR']/val))
-TypeError: can't multiply sequence by non-int of type 'float'
-[2020-04-19 16:44:08,171]{/home/andrenovado/Documents/Coding/Alterra/andre_derby_restful_api/blueprints/__init__.py:59} ERROR - REQUEST_LOG	{"method": "GET", "code": "500 INTERNAL SERVER ERROR", "uri": "/conversion/con?keywords=table&marketplace=US&currency=USD", "request": null, "response": {"message": "Internal Server Error"}}
-[2020-04-19 16:45:01,620]{/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask/app.py:1892} ERROR - Exception on /conversion/con [GET]
-Traceback (most recent call last):
-  File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask/app.py", line 1950, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask/app.py", line 1936, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask_restful/__init__.py", line 468, in wrapper
-    resp = resource(*args, **kwargs)
-  File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask/views.py", line 89, in view
-    return self.dispatch_request(*args, **kwargs)
-  File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask_restful/__init__.py", line 583, in dispatch_request
-    resp = meth(*args, **kwargs)
-  File "/home/andrenovado/Documents/Coding/Alterra/andre_derby_restful_api/blueprints/conversion/resources.py", line 22, in get
-    currency = int(returned_data[1][1:])
-ValueError: invalid literal for int() with base 10: 'SD'
-[2020-04-19 16:45:01,623]{/home/andrenovado/Documents/Coding/Alterra/andre_derby_restful_api/blueprints/__init__.py:59} ERROR - REQUEST_LOG	{"method": "GET", "code": "500 INTERNAL SERVER ERROR", "uri": "/conversion/con?keywords=table&marketplace=US&currency=USD", "request": null, "response": {"message": "Internal Server Error"}}
+  File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask_restful/__init__.py", line 573, in dispatch_request
+    assert meth is not None, 'Unimplemented method %r' % request.method
+AssertionError: Unimplemented method 'GET'
+[2020-04-19 22:19:21,916]{/home/andrenovado/Documents/Coding/Alterra/andre_derby_restful_api/blueprints/__init__.py:59} ERROR - REQUEST_LOG	{"method": "GET", "code": "500 INTERNAL SERVER ERROR", "uri": "/email/send?keywords=phone&marketplace=US&origin_currency=USD&target_currency=IDR&email=andrenovado@gmail.com&name=Andre", "request": null, "response": {"message": "Internal Server Error"}}
+[2020-04-19 22:25:10,043]{/home/andrenovado/Documents/Coding/Alterra/andre_derby_restful_api/blueprints/__init__.py:49} WARNING - REQUEST_LOG	{"method": "GET", "code": "200 OK", "uri": "/conversion/con?keywords=laptop&marketplace=US&origin_currency=USD&target_currency=EUR&name=Andre&email=derbyprayogo@gmail.com", "request": null, "response": {"ASIN": "B07RF1XD36", "title": "Acer Aspire 5 Slim Laptop, 15.6 inches Full HD IPS Display, AMD Ryzen 3 3200U, Vega 3 Graphics, 4GB DDR4, 128GB SSD, Backlit Keyboard, Windows 10 in S Mode, A515-43-R19L,Silver", "price": "$461.70", "listPrice": "", "imageUrl": "https://m.media-amazon.com/images/I/41vMYgD92xL._SL160_.jpg", "detailPageURL": "https://www.amazon.com/dp/B07RF1XD36", "rating": "4.5", "totalReviews": "4756", "subtitle": "", "isPrimeEligible": "0", "converted_price": "424.567340 EUR", "email_status": "sent"}}
