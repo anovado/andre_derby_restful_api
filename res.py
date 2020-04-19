@@ -1,14 +1,14 @@
 import requests
+url = "https://currency-value.p.rapidapi.com/global/currency_rates"
 
-url = "https://amazon-price1.p.rapidapi.com/search"
-
-querystring = {"keywords":"bikes","marketplace":"ES"}
+# querystring = {"keywords":"bikes","marketplace":"US"}
 
 headers = {
-    'x-rapidapi-host': "amazon-price1.p.rapidapi.com",
-    'x-rapidapi-key': "8b8b1523f5msh19d30ba49e79629p176612jsn8f3bef635c79"
+
+    'x-rapidapi-host': "currency-value.p.rapidapi.com",
+    'x-rapidapi-key': "5f6997638bmsh0072972d1fcfa8bp129664jsn47872153a2b4"
     }
 
-response = requests.request("GET", url, headers=headers, params=querystring)
+response = requests.request("GET", url, headers=headers)
 
 print(response.text)

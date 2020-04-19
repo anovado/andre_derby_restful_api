@@ -16,21 +16,21 @@ class Config():
         cfg['mysql']['db']
     )
     SQLALCHEMY_TRACK_MODIFICATIONS = False
-    JWT_ACCESS_TOKEN_EXPIRES = timedelta(days=1)
-    JWT_SECRET_KEY = cfg['jwt']['secret_key']
+    # JWT_ACCESS_TOKEN_EXPIRES = timedelta(days=1)
+    # JWT_SECRET_KEY = cfg['jwt']['secret_key']
     HOST_MATAUANG = cfg['matauang']['host1']
     KEY_MATAUANG = cfg['matauang']['key1']
-    X_HOST = cfg['amazon']['x_host']
-    X_APIKEY = cfg['amazon']['x_apikey']
+    X_HOST = cfg['amazon']['host2']
+    X_APIKEY = cfg['amazon']['key2']
     
-# class DevelopmentConfig(Config):
-#     APP_DEBUG = True
-#     DEBUG = True
-#     MAX_BYTES = 10000
-#     APP_PORT = 9090
+class DevelopmentConfig(Config):
+    APP_DEBUG = True
+    DEBUG = True
+    MAX_BYTES = 10000
+    APP_PORT = 9090
 
-# class ProductionConfig(Config):
-#     APP_DEBUG = False
-#     DEBUG = False
-#     MAX_BYTES = 10000
-#     APP_PORT = 5050
+class ProductionConfig(Config):
+    APP_DEBUG = False
+    DEBUG = False
+    MAX_BYTES = 10000
+    APP_PORT = 5050
