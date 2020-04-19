@@ -1,7 +1,8 @@
-import requests
+import requests, config
 from flask import Blueprint
 from flask_restful import Api, Resource, reqparse
 from flask_jwt_extended import jwt_required
+from blueprints import app
 
 bp_conversion = Blueprint('conversion', __name__)
 api = Api(bp_conversion)
@@ -15,8 +16,8 @@ class GetConversion(Resource):
         args=parser.parse_args()
         payload = "{\n\t\"from\": \"USD\",\n    \"to\": \"HKD\"\n}"
         headers = {
-            'x-rapidapi-host': 'currency-value.p.rapidapi.com',
-            'x-rapidapi-key': '5f6997638bmsh0072972d1fcfa8bp129664jsn47872153a2b4',
+            'x-rapidapi-host': app.config['HOST_MATAUANG'],
+            'x-rapidapi-key': app.config['KEY_MATAUANG'],
             'Content-Type': 'application/json'
         }
         response = requests.request("GET", self.url, headers=headers, data = payload)

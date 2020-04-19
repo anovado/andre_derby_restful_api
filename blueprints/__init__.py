@@ -1,4 +1,4 @@
-import json, config, os
+import json, logging, config, os
 from flask import Flask, request
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate, MigrateCommand
