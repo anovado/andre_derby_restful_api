@@ -17,7 +17,7 @@ class Config():
     )
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     JWT_ACCESS_TOKEN_EXPIRES = timedelta(days=1)
-    JWT_SECRET_KEY = cfg['jwt']['secret_key']
+    # JWT_SECRET_KEY = cfg['jwt']['secret_key']
     X_HOST = cfg['amazon']['x_host']
     X_APIKEY = cfg['amazon']['x_apikey']
     
