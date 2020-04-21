@@ -9,7 +9,7 @@ bp_conversion = Blueprint('conversion', __name__)
 api = Api(bp_conversion)
 
 class GetConversion(Resource):
-    url = "https://currency-value.p.rapidapi.com/global/currency_rates"
+    url = app.config['URL_MATAUANG']
 
     # @jwt_required
     def get(self, product_price):

@@ -9,7 +9,7 @@ bp_amazon = Blueprint('amazon', __name__)
 api = Api(bp_amazon)
 
 class GetPriceReport(Resource):
-    url = "https://amazon-price1.p.rapidapi.com/search"
+    url = app.config['X_URL']
     
     def get(self, keyword):
         parser = reqparse.RequestParser()

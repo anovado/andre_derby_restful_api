@@ -21,7 +21,7 @@ class PublicGetCurrentWeather(Resource):
 
         rq = requests.get(self.wio_host, params={'q': args['city'], 'appid': self.wio_apikey})
         geo = rq.json()
-        temperature = float(geo['list'][4]['main']['temp']) - 273.15
+        temperature = float(geo['list'][0]['main']['temp']) - 273.15
         search_result=[]
         template =[]
         rounded_temp = math.floor(temperature * 100) / 100

@@ -19,24 +19,25 @@ class Clients(db.Model):
     
     
     response_field = {
-        'created_at':fields.DateTime,
-        'updated_at':fields.DateTime,
-        'deleted_at':fields.DateTime,
         'id': fields.Integer,
         'client_key': fields.String,
         'client_secret': fields.String,
+        'salt': fields.String,
         'status':fields.String,
+        'created_at':fields.DateTime,
+        'updated_at':fields.DateTime,
+        'deleted_at':fields.DateTime,
     }
     
     jwt_claim_fields =  {
         'client_key': fields.String,
         'status':fields.String
     }
-    def __init__(self, client_key, client_secret, status):
+    def __init__(self, client_key, client_secret, salt, status):
         self.client_key = client_key
         self.client_secret = client_secret
+        self.salt = salt
         self.status = status
-        
     
     def __repr__(self):
         return '<Client %r>' % self.id

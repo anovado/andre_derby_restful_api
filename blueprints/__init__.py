@@ -6,6 +6,10 @@ from flask_jwt_extended import JWTManager, verify_jwt_in_request, get_jwt_claims
 from flask_script import Manager
 from functools import wraps
 
+from werkzeug.contrib.cache import SimpleCache
+
+cache = SimpleCache()
+
 app = Flask(__name__)
 jwt = JWTManager(app)
 
@@ -15,7 +19,7 @@ def internal_required(fn):
     def wrapper(*args, **kwargs):
         verify_jwt_in_request()
         claims = get_jwt_claims()
-        if not claims['status']:
+        if claims['status']=="false":
             return {'status': 'FORBIDDEN', 'message': 'Internal Only!'}, 403
         else:
             return fn(*args, **kwargs)
@@ -29,6 +33,8 @@ manager.add_command('db', MigrateCommand)
 
 if os.environ.get('FLASK_ENV', 'Production') == "Production":
     app.config.from_object(config.ProductionConfig)
+elif os.environ.get('FLASK_ENV', 'Production') == "Testing":
+    app.config.from_object(config.Testing)
 else:
     app.config.from_object(config.DevelopmentConfig)
     
