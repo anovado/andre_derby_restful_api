@@ -10,7 +10,6 @@ bp_email = Blueprint('email', __name__)
 api = Api(bp_email)
 
 class PostEmail(Resource):
-    # url = 
   
     def post(self, template):
     
