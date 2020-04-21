@@ -14,17 +14,56 @@ class TestWeather():
                 return self.json_data
         if len(args) > 0:
             if args[0] == app.config['WIO_HOST'] + '/q':
-                return MockResponse({'offset': '2', 'longitude': 4.8995, 'timezone': 'Europe/Amsterdam', 'latitude': 52.3824, 'area_code': '0', 'dma_code': '0', 'organization': 'AS15480 Vodafone-Libertel NV', 'country': 'Netherlands', 'ip': '109.39.13.10', 'country_code3': 'NLD', 'continent_code': 'EU', 'country_code': 'NL'}, 200)
-            # elif args[0] == app.config['WIO_HOST'] + '/current':
-            #     return MockResponse({'data': [{'rh': 34, 'pod': 'd', 'lon': 4.9, 'pres': 1020.97, 'timezone': 'Europe/Amsterdam', 'ob_time': '2020-04-20 10:26', 'country_code': 'NL', 'clouds': 0, 'ts': 1587378370, 'solar_rad': 767.29, 'state_code': '07', 'city_name': 'Amsterdam', 'wind_spd': 6.33731, 'last_ob_time': '2020-04-20T10:01:00', 'wind_cdir_full': 'east-northeast', 'wind_cdir': 'ENE', 'slp': 1020.77, 'vis': 24.1349, 'h_angle': -12.9, 'sunset': '18:48', 'dni': 882.22, 'dewpt': -1.8, 'snow': 0, 'uv': 6.31723, 'precip': 0, 'wind_dir': 73, 'sunrise': '04:28', 'ghi': 767.29, 'dhi': 113.13, 'aqi': 53, 'lat': 52.38, 'weather': {'icon': 'c01d', 'code': '800', 'description': 'Clear sky'}, 'datetime': '2020-04-20:10', 'temp': 13.9, 'station': 'D3248', 'elev_angle': 44.67, 'app_temp': 13.9}], 'count': 1}, 200)
+                return MockResponse({
+                    "cod": "200",
+                    "message": 0,
+                    "cnt": 40,
+                    "list": [
+                        {
+                            "dt": 1587470400,
+                            "main": {
+                                "temp": 302.4,
+                                "feels_like": 306.41,
+                                "temp_min": 301.83,
+                                "temp_max": 302.4,
+                                "pressure": 1009,
+                                "sea_level": 1009,
+                                "grnd_level": 1008,
+                                "humidity": 72,
+                                "temp_kf": 0.57
+                            },
+                            "weather": [
+                                {
+                                    "id": 500,
+                                    "main": "Rain",
+                                    "description": "light rain",
+                                    "icon": "10n"
+                                }
+                            ],
+                            "clouds": {
+                                "all": 69
+                            },
+                            "wind": {
+                                "speed": 2.31,
+                                "deg": 62
+                            },
+                            "rain": {
+                                "3h": 1.57
+                            },
+                            "sys": {
+                                "pod": "n"
+                            },
+                            "dt_txt": "2020-04-21 12:00:00"
+                        }]}, 200)
+           
         else:
             return MockResponse(None, 404)
         
     @mock.patch('requests.get', side_effect=mocked_requests_get)
     def test_check_weather_ip(self, get_mock, client):
         token = create_token()
-        res = client.get('/weather/ip',
-                         query_string={'ip':"192.92.0.0"},
+        res = client.get('/weather/q',
+                         query_string={'city':"london"},
                          headers={'Authorization':'Bearer ' + token})
         
         res_json = json.loads(res.data)
