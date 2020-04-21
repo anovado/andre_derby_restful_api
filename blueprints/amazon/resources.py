@@ -1,4 +1,4 @@
-import requests, config
+import requests, config, math
 from flask import Blueprint
 from flask_restful import Api, Resource, reqparse
 from flask_jwt_extended import jwt_required
@@ -31,11 +31,12 @@ class GetPriceReport(Resource):
         }
         response = requests.request('GET', self.url, headers=headers, params=querystring)
         data = response.json()
-        converted_price = GetConversion().get(data[0]['price'])
-        data['converted_price'] = converted_price
+        result_product = data[0]
+        converted_price = GetConversion().get(result_product['price'])
+        result_product['converted_price'] = converted_price
         
-        email_template = f"<h3>{data['title']}</h3><br /><h5>Price: {data['price']}</h5><h5>Converted Price: {data['converted_price']}</h5><img src='{data['imageUrl']}' alt='Product image'><br /><h5>Rating: {data['rating']}</h5><h5>Total Reviews: {data['totalReviews']}</h5><br /><a href='{data['detailPageURL']}''>See more details of this product here</a>"
+        email_template = f"<h2>{result_product['title']}</h2><br /><h3>Price: {result_product['price']}</h3><h3>Converted Price: {result_product['converted_price']}</h3><img src='{result_product['imageUrl']}' alt='Product image'><br /><h3>Rating: {result_product['rating']}</h3><h3>Total Reviews: {result_product['totalReviews']}</h3><br /><h3><a href='{result_product['detailPageURL']}''>See more details of this product here</a></h3><br /><br /><br />" 
         
-        return [data, email_template]
+        return [result_product, email_template]
 
 api.add_resource(GetPriceReport, '/price')

@@ -1,4 +1,4 @@
-[2020-04-19 16:46:20,880]{/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask/app.py:1892} ERROR - Exception on /conversion/con [GET]
+[2020-04-19 20:28:00,456]{/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask/app.py:1892} ERROR - Exception on /conversion/con [GET]
 Traceback (most recent call last):
   File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask/app.py", line 1950, in full_dispatch_request
     rv = self.dispatch_request()
@@ -10,11 +10,11 @@ Traceback (most recent call last):
     return self.dispatch_request(*args, **kwargs)
   File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask_restful/__init__.py", line 583, in dispatch_request
     resp = meth(*args, **kwargs)
-  File "/home/andrenovado/Documents/Coding/Alterra/andre_derby_restful_api/blueprints/conversion/resources.py", line 22, in get
-    currency = int(returned_data[1][1:])
-ValueError: invalid literal for int() with base 10: 'SD'
-[2020-04-19 16:46:20,885]{/home/andrenovado/Documents/Coding/Alterra/andre_derby_restful_api/blueprints/__init__.py:59} ERROR - REQUEST_LOG	{"method": "GET", "code": "500 INTERNAL SERVER ERROR", "uri": "/conversion/con?keywords=table&marketplace=US&currency=USD", "request": null, "response": {"message": "Internal Server Error"}}
-[2020-04-19 16:55:43,587]{/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask/app.py:1892} ERROR - Exception on /conversion/con [GET]
+  File "/home/andrenovado/Documents/Coding/Alterra/andre_derby_restful_api/blueprints/conversion/resources.py", line 34, in get
+    price = float(search_result['price'][1:])
+ValueError: could not convert string to float: 
+[2020-04-19 20:28:00,463]{/home/andrenovado/Documents/Coding/Alterra/andre_derby_restful_api/blueprints/__init__.py:59} ERROR - REQUEST_LOG	{"method": "GET", "code": "500 INTERNAL SERVER ERROR", "uri": "/conversion/con?keywords=tv&marketplace=US&origin_currency=USD&target_currency=IDR&name=Andre&email=andrenovado@gmail.com", "request": null, "response": {"message": "Internal Server Error"}}
+[2020-04-19 20:30:59,579]{/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask/app.py:1892} ERROR - Exception on /conversion/con [GET]
 Traceback (most recent call last):
   File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask/app.py", line 1950, in full_dispatch_request
     rv = self.dispatch_request()
@@ -26,11 +26,11 @@ Traceback (most recent call last):
     return self.dispatch_request(*args, **kwargs)
   File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask_restful/__init__.py", line 583, in dispatch_request
     resp = meth(*args, **kwargs)
-  File "/home/andrenovado/Documents/Coding/Alterra/andre_derby_restful_api/blueprints/conversion/resources.py", line 33, in get
-    price = int(search_result['price'][1:])
-ValueError: invalid literal for int() with base 10: '49.99'
-[2020-04-19 16:55:43,590]{/home/andrenovado/Documents/Coding/Alterra/andre_derby_restful_api/blueprints/__init__.py:59} ERROR - REQUEST_LOG	{"method": "GET", "code": "500 INTERNAL SERVER ERROR", "uri": "/conversion/con?keywords=table&marketplace=US&origin_currency=USD&target_currency=IDR", "request": null, "response": {"message": "Internal Server Error"}}
-[2020-04-19 16:56:11,954]{/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask/app.py:1892} ERROR - Exception on /conversion/con [GET]
+  File "/home/andrenovado/Documents/Coding/Alterra/andre_derby_restful_api/blueprints/conversion/resources.py", line 42, in get
+    PostEmail().post()
+AttributeError: 'PostEmail' object has no attribute 'post'
+[2020-04-19 20:30:59,581]{/home/andrenovado/Documents/Coding/Alterra/andre_derby_restful_api/blueprints/__init__.py:59} ERROR - REQUEST_LOG	{"method": "GET", "code": "500 INTERNAL SERVER ERROR", "uri": "/conversion/con?keywords=tv&marketplace=US&origin_currency=USD&target_currency=IDR&name=Andre&email=andrenovado@gmail.com", "request": null, "response": {"message": "Internal Server Error"}}
+[2020-04-19 20:31:57,337]{/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask/app.py:1892} ERROR - Exception on /conversion/con [GET]
 Traceback (most recent call last):
   File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask/app.py", line 1950, in full_dispatch_request
     rv = self.dispatch_request()
@@ -42,25 +42,9 @@ Traceback (most recent call last):
     return self.dispatch_request(*args, **kwargs)
   File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask_restful/__init__.py", line 583, in dispatch_request
     resp = meth(*args, **kwargs)
-  File "/home/andrenovado/Documents/Coding/Alterra/andre_derby_restful_api/blueprints/conversion/resources.py", line 39, in get
-    search_result[f"{ky}"] = 'f' % (price*data['currency_rates'][target_currency]/val)
-TypeError: not all arguments converted during string formatting
-[2020-04-19 16:56:11,956]{/home/andrenovado/Documents/Coding/Alterra/andre_derby_restful_api/blueprints/__init__.py:59} ERROR - REQUEST_LOG	{"method": "GET", "code": "500 INTERNAL SERVER ERROR", "uri": "/conversion/con?keywords=table&marketplace=US&origin_currency=USD&target_currency=IDR", "request": null, "response": {"message": "Internal Server Error"}}
-[2020-04-19 16:57:58,554]{/home/andrenovado/Documents/Coding/Alterra/andre_derby_restful_api/blueprints/__init__.py:49} WARNING - REQUEST_LOG	{"method": "GET", "code": "200 OK", "uri": "/conversion/con?keywords=table&marketplace=US&origin_currency=USD&target_currency=IDR", "request": null, "response": {"ASIN": "B003YJPC2A", "title": "Lifetime Height Adjustable Craft Camping and Utility Folding Table, 4 ft, 4'/48 x 24, White Granite", "price": "$49.99", "listPrice": "", "imageUrl": "https://m.media-amazon.com/images/I/31m-j0nq6LL._SL160_.jpg", "detailPageURL": "https://www.amazon.com/dp/B003YJPC2A", "rating": "4.6", "totalReviews": "6367", "subtitle": "", "isPrimeEligible": "1", "converted_price": "0.003212"}}
-[2020-04-19 16:59:22,700]{/home/andrenovado/Documents/Coding/Alterra/andre_derby_restful_api/blueprints/__init__.py:49} WARNING - REQUEST_LOG	{"method": "GET", "code": "200 OK", "uri": "/conversion/con?keywords=table&marketplace=US&origin_currency=USD&target_currency=IDR", "request": null, "response": {"ASIN": "B003YJPC2A", "title": "Lifetime Height Adjustable Craft Camping and Utility Folding Table, 4 ft, 4'/48 x 24, White Granite", "price": "$49.99", "listPrice": "", "imageUrl": "https://m.media-amazon.com/images/I/31m-j0nq6LL._SL160_.jpg", "detailPageURL": "https://www.amazon.com/dp/B003YJPC2A", "rating": "4.6", "totalReviews": "6367", "subtitle": "", "isPrimeEligible": "1", "converted_price": "0.003212 IDR"}}
-[2020-04-19 17:30:38,513]{/home/andrenovado/Documents/Coding/Alterra/andre_derby_restful_api/blueprints/__init__.py:49} WARNING - REQUEST_LOG	{"method": "GET", "code": "200 OK", "uri": "/conversion/con?keywords=table&marketplace=US&origin_currency=USD&target_currency=IDR", "request": null, "response": {"ASIN": "B003YJPC2A", "title": "Lifetime Height Adjustable Craft Camping and Utility Folding Table, 4 ft, 4'/48 x 24, White Granite", "price": "$49.99", "listPrice": "", "imageUrl": "https://m.media-amazon.com/images/I/31m-j0nq6LL._SL160_.jpg", "detailPageURL": "https://www.amazon.com/dp/B003YJPC2A", "rating": "4.6", "totalReviews": "6367", "subtitle": "", "isPrimeEligible": "1", "converted_price": "778121.084295 IDR"}}
-[2020-04-19 20:20:27,031]{/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask/app.py:1892} ERROR - Exception on /email/send [GET]
-Traceback (most recent call last):
-  File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask/app.py", line 1950, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask/app.py", line 1936, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask_restful/__init__.py", line 468, in wrapper
-    resp = resource(*args, **kwargs)
-  File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask/views.py", line 89, in view
-    return self.dispatch_request(*args, **kwargs)
-  File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask_restful/__init__.py", line 573, in dispatch_request
-    assert meth is not None, 'Unimplemented method %r' % request.method
-AssertionError: Unimplemented method 'GET'
-[2020-04-19 20:20:27,035]{/home/andrenovado/Documents/Coding/Alterra/andre_derby_restful_api/blueprints/__init__.py:59} ERROR - REQUEST_LOG	{"method": "GET", "code": "500 INTERNAL SERVER ERROR", "uri": "/email/send?name=Andre&email=andrenovado@gmail.com", "request": null, "response": {"message": "Internal Server Error"}}
-[2020-04-19 20:22:21,190]{/home/andrenovado/Documents/Coding/Alterra/andre_derby_restful_api/blueprints/__init__.py:49} WARNING - REQUEST_LOG	{"method": "GET", "code": "200 OK", "uri": "/conversion/con?keywords=table&marketplace=US&origin_currency=USD&target_currency=IDR&name=Andre&email=andrenovado@gmail.com", "request": null, "response": {"ASIN": "B003YJPC2A", "title": "Lifetime Height Adjustable Craft Camping and Utility Folding Table, 4 ft, 4'/48 x 24, White Granite", "price": "$49.99", "listPrice": "", "imageUrl": "https://m.media-amazon.com/images/I/31m-j0nq6LL._SL160_.jpg", "detailPageURL": "https://www.amazon.com/dp/B003YJPC2A", "rating": "4.6", "totalReviews": "6367", "subtitle": "", "isPrimeEligible": "1", "converted_price": "775044.767789 IDR"}}
+  File "/home/andrenovado/Documents/Coding/Alterra/andre_derby_restful_api/blueprints/conversion/resources.py", line 42, in get
+    PostEmail().Post()
+  File "/home/andrenovado/Documents/Coding/Alterra/andre_derby_restful_api/blueprints/email/resources.py", line 45, in Post
+    "HTMLPart": f"<h2>{search_result['title']}</h2><br /><p>Price: {search_result['price']}</p><p>Converted Price: {search_result['converted_price']}</p><img src='{search_result['imageUrl']}' alt='Product image'><br /><p>Rating: {search_result['rating']}</p><p>Total Reviews: {search_result['totalReviews']}</p><p><a href='{search_result['detailPageURL']}''></a></p>",
+KeyError: 'converted_price'
+[2020-04-19 20:31:57,340]{/home/andrenovado/Documents/Coding/Alterra/andre_derby_restful_api/blueprints/__init__.py:59} ERROR - REQUEST_LOG	{"method": "GET", "code": "500 INTERNAL SERVER ERROR", "uri": "/conversion/con?keywords=tv&marketplace=US&origin_currency=USD&target_currency=IDR&name=Andre&email=andrenovado@gmail.com", "request": null, "response": {"message": "Internal Server Error"}}
