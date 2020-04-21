@@ -6,7 +6,6 @@ from flask_jwt_extended import jwt_required
 from blueprints import app
 from blueprints.amazon.resources import GetPriceReport
 
-
 bp_email = Blueprint('email', __name__)
 api = Api(bp_email)
 

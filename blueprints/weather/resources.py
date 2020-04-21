@@ -1,4 +1,4 @@
-import requests
+import requests, math
 from flask import Blueprint
 from flask_restful import Api, reqparse, Resource
 from flask_jwt_extended import jwt_required
@@ -12,6 +12,7 @@ api = Api(bp_weather)
 class PublicGetCurrentWeather(Resource):    
     wio_host = app.config['WIO_HOST']
     wio_apikey = app.config['WIO_KEY']
+        
     # @jwt_required
     def get(self):
         parser = reqparse.RequestParser()
@@ -23,7 +24,9 @@ class PublicGetCurrentWeather(Resource):
         temperature = float(geo['list'][4]['main']['temp']) - 273.15
         search_result=[]
         template =[]
-        search_result["destination_temperature"] = temperature
+        rounded_temp = math.floor(temperature * 100) / 100
+        search_result.append(f"Your destination temperature is {rounded_temp} ° Celcius")
+        
         if temperature < 10:
             shirt = GetPriceReport().get('shirt for winter')
             pants = GetPriceReport().get('pants for winter')
@@ -72,8 +75,8 @@ class PublicGetCurrentWeather(Resource):
             template.append(jackets[1])
             template.append(shoes[1])
             template.append(hat[1])
-            
-        PostEmail().post('template')
+        template_toprint = ''.join(map(str, template))    
+        PostEmail().post(template_toprint)
         return search_result, 200
 
 

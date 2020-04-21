@@ -13,7 +13,7 @@ api = Api(bp_conversion)
 class GetConversion(Resource):
     url = "https://currency-value.p.rapidapi.com/global/currency_rates"
 
-    @jwt_required
+    # @jwt_required
     def get(self, product_price):
         parser = reqparse.RequestParser()
         parser.add_argument('target_currency', location='args', default=None)
@@ -34,7 +34,7 @@ class GetConversion(Resource):
         data_list = data['currency_rates']
         for _, (ky, val) in enumerate(data_list.items()) :
             if ky == target_currency:
-                output = '%f %s' % (price*data['currency_rates']['USD']/val, target_currency)
+                output = '%.02f %s' % (price*data['currency_rates']['USD']/val, target_currency)
         
         
         return output
