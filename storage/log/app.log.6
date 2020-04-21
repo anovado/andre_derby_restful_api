@@ -1,41 +1,7 @@
-[2020-04-19 20:36:23,773]{/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask/app.py:1892} ERROR - Exception on /conversion/con [GET]
-Traceback (most recent call last):
-  File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/urllib3/connection.py", line 160, in _new_conn
-    (self._dns_host, self.port), self.timeout, **extra_kw
-  File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/urllib3/util/connection.py", line 61, in create_connection
-    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
-  File "/usr/lib/python3.6/socket.py", line 745, in getaddrinfo
-    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
-socket.gaierror: [Errno -3] Temporary failure in name resolution
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/urllib3/connectionpool.py", line 677, in urlopen
-    chunked=chunked,
-  File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/urllib3/connectionpool.py", line 381, in _make_request
-    self._validate_conn(conn)
-  File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/urllib3/connectionpool.py", line 976, in _validate_conn
-    conn.connect()
-  File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/urllib3/connection.py", line 308, in connect
-    conn = self._new_conn()
-  File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/urllib3/connection.py", line 172, in _new_conn
-    self, "Failed to establish a new connection: %s" % e
-urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x7f172dc1d6d8>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/requests/adapters.py", line 449, in send
-    timeout=timeout
-  File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/urllib3/connectionpool.py", line 725, in urlopen
-    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
-  File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/urllib3/util/retry.py", line 439, in increment
-    raise MaxRetryError(_pool, url, error or ResponseError(cause))
-urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='amazon-price1.p.rapidapi.com', port=443): Max retries exceeded with url: /search?keywords=bike&marketplace=US (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f172dc1d6d8>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution',))
-
-During handling of the above exception, another exception occurred:
-
+[2020-04-19 21:02:53,473]{/home/andrenovado/Documents/Coding/Alterra/andre_derby_restful_api/blueprints/__init__.py:49} WARNING - REQUEST_LOG	{"method": "GET", "code": "200 OK", "uri": "/conversion/con?keywords=phone&marketplace=FR&origin_currency=EUR&target_currency=IDR&name=Andre&email=andrenovado@gmail.com", "request": null, "response": {"ASIN": "B07KWX9GNV", "title": "Samsung Galaxy A10 Dual SIM 32GB 2GB RAM SM-A105F/DS Noir SIM Free", "price": "144,99\u00a0\u20ac", "listPrice": "", "imageUrl": "https://m.media-amazon.com/images/I/41XyhsqaWuL._SL160_.jpg", "detailPageURL": "https://www.amazon.fr/dp/B07KWX9GNV", "rating": "4.5", "totalReviews": "2528", "subtitle": "", "isPrimeEligible": "1", "converted_price": "2444527.870759 IDR", "email_status": "sent"}}
+[2020-04-19 21:40:12,109]{/home/andrenovado/Documents/Coding/Alterra/andre_derby_restful_api/blueprints/__init__.py:49} WARNING - REQUEST_LOG	{"method": "GET", "code": "200 OK", "uri": "/conversion/con?keywords=phone&marketplace=FR&origin_currency=EUR&target_currency=IDR&name=Andre&email=andrenovado@gmail.com", "request": null, "response": {"ASIN": "B07KWX9GNV", "title": "Samsung Galaxy A10 Dual SIM 32GB 2GB RAM SM-A105F/DS Noir SIM Free", "price": "144,99\u00a0\u20ac", "listPrice": "", "imageUrl": "https://m.media-amazon.com/images/I/41XyhsqaWuL._SL160_.jpg", "detailPageURL": "https://www.amazon.fr/dp/B07KWX9GNV", "rating": "4.5", "totalReviews": "2528", "subtitle": "", "isPrimeEligible": "1", "converted_price": "2444527.870759 IDR", "email_status": "sent"}}
+[2020-04-19 21:42:48,186]{/home/andrenovado/Documents/Coding/Alterra/andre_derby_restful_api/blueprints/__init__.py:49} WARNING - REQUEST_LOG	{"method": "GET", "code": "200 OK", "uri": "/conversion/con?keywords=laptop&marketplace=US&origin_currency=USD&target_currency=EUR&name=Andre&email=derbyprayogo@gmail.com", "request": null, "response": {"ASIN": "B07RF1XD36", "title": "Acer Aspire 5 Slim Laptop, 15.6 inches Full HD IPS Display, AMD Ryzen 3 3200U, Vega 3 Graphics, 4GB DDR4, 128GB SSD, Backlit Keyboard, Windows 10 in S Mode, A515-43-R19L,Silver", "price": "$461.70", "listPrice": "", "imageUrl": "https://m.media-amazon.com/images/I/41vMYgD92xL._SL160_.jpg", "detailPageURL": "https://www.amazon.com/dp/B07RF1XD36", "rating": "4.5", "totalReviews": "4756", "subtitle": "", "isPrimeEligible": "0", "converted_price": "424.567340 EUR", "email_status": "sent"}}
+[2020-04-19 21:45:28,370]{/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask/app.py:1892} ERROR - Exception on /conversion/con [GET]
 Traceback (most recent call last):
   File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask/app.py", line 1950, in full_dispatch_request
     rv = self.dispatch_request()
@@ -47,17 +13,39 @@ Traceback (most recent call last):
     return self.dispatch_request(*args, **kwargs)
   File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask_restful/__init__.py", line 583, in dispatch_request
     resp = meth(*args, **kwargs)
-  File "/home/andrenovado/Documents/Coding/Alterra/andre_derby_restful_api/blueprints/conversion/resources.py", line 21, in get
-    returned_data = getprice.get()
-  File "/home/andrenovado/Documents/Coding/Alterra/andre_derby_restful_api/blueprints/amazon/resources.py", line 33, in get
-    response = requests.request('GET', self.url, headers=headers, params=querystring)
-  File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/requests/api.py", line 61, in request
-    return session.request(method=method, url=url, **kwargs)
-  File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/requests/sessions.py", line 530, in request
-    resp = self.send(prep, **send_kwargs)
-  File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/requests/sessions.py", line 643, in send
-    r = adapter.send(request, **kwargs)
-  File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/requests/adapters.py", line 516, in send
-    raise ConnectionError(e, request=request)
-requests.exceptions.ConnectionError: HTTPSConnectionPool(host='amazon-price1.p.rapidapi.com', port=443): Max retries exceeded with url: /search?keywords=bike&marketplace=US (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f172dc1d6d8>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution',))
-[2020-04-19 20:36:23,781]{/home/andrenovado/Documents/Coding/Alterra/andre_derby_restful_api/blueprints/__init__.py:59} ERROR - REQUEST_LOG	{"method": "GET", "code": "500 INTERNAL SERVER ERROR", "uri": "/conversion/con?keywords=bike&marketplace=US&origin_currency=USD&target_currency=IDR&name=Andre&email=andrenovado@gmail.com", "request": null, "response": {"message": "Internal Server Error"}}
+  File "/home/andrenovado/Documents/Coding/Alterra/andre_derby_restful_api/blueprints/conversion/resources.py", line 43, in get
+    PostEmail().Post()
+  File "/home/andrenovado/Documents/Coding/Alterra/andre_derby_restful_api/blueprints/email/resources.py", line 45, in Post
+    "HTMLPart": f"<h2>{search_result['title']}</h2><br /><p>Price: {search_result['price']}</p><p>Converted Price: {search_result['converted_price']}</p><img src='{search_result['imageUrl']}' alt='Product image'><br /><p>Rating: {search_result['rating']}</p><p>Total Reviews: {search_result['totalReviews']}</p><br /><a href='{search_result['detailPageURL']}''>See more details here...</a>",
+KeyError: 'converted_price'
+[2020-04-19 21:45:28,376]{/home/andrenovado/Documents/Coding/Alterra/andre_derby_restful_api/blueprints/__init__.py:59} ERROR - REQUEST_LOG	{"method": "GET", "code": "500 INTERNAL SERVER ERROR", "uri": "/conversion/con?keywords=laptop&marketplace=US&origin_currency=USD&target_currency=EUR&name=Andre&email=derbyprayogo@gmail.com", "request": null, "response": {"message": "Internal Server Error"}}
+[2020-04-19 22:18:00,710]{/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask/app.py:1892} ERROR - Exception on /email/send [GET]
+Traceback (most recent call last):
+  File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask_restful/__init__.py", line 468, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask/views.py", line 89, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask_restful/__init__.py", line 573, in dispatch_request
+    assert meth is not None, 'Unimplemented method %r' % request.method
+AssertionError: Unimplemented method 'GET'
+[2020-04-19 22:18:00,711]{/home/andrenovado/Documents/Coding/Alterra/andre_derby_restful_api/blueprints/__init__.py:59} ERROR - REQUEST_LOG	{"method": "GET", "code": "500 INTERNAL SERVER ERROR", "uri": "/email/send?keywords=phone&marketplace=US&origin_currency=USD&target_currency=IDR&email=andrenovado@gmail.com&name=Andre", "request": null, "response": {"message": "Internal Server Error"}}
+[2020-04-19 22:18:17,900]{/home/andrenovado/Documents/Coding/Alterra/andre_derby_restful_api/blueprints/__init__.py:59} ERROR - REQUEST_LOG	{"method": "POST", "code": "405 METHOD NOT ALLOWED", "uri": "/email/send?keywords=phone&marketplace=US&origin_currency=USD&target_currency=IDR&email=andrenovado@gmail.com&name=Andre", "request": null, "response": {"message": "The method is not allowed for the requested URL."}}
+[2020-04-19 22:19:21,914]{/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask/app.py:1892} ERROR - Exception on /email/send [GET]
+Traceback (most recent call last):
+  File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask_restful/__init__.py", line 468, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask/views.py", line 89, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask_restful/__init__.py", line 573, in dispatch_request
+    assert meth is not None, 'Unimplemented method %r' % request.method
+AssertionError: Unimplemented method 'GET'
+[2020-04-19 22:19:21,916]{/home/andrenovado/Documents/Coding/Alterra/andre_derby_restful_api/blueprints/__init__.py:59} ERROR - REQUEST_LOG	{"method": "GET", "code": "500 INTERNAL SERVER ERROR", "uri": "/email/send?keywords=phone&marketplace=US&origin_currency=USD&target_currency=IDR&email=andrenovado@gmail.com&name=Andre", "request": null, "response": {"message": "Internal Server Error"}}
+[2020-04-19 22:25:10,043]{/home/andrenovado/Documents/Coding/Alterra/andre_derby_restful_api/blueprints/__init__.py:49} WARNING - REQUEST_LOG	{"method": "GET", "code": "200 OK", "uri": "/conversion/con?keywords=laptop&marketplace=US&origin_currency=USD&target_currency=EUR&name=Andre&email=derbyprayogo@gmail.com", "request": null, "response": {"ASIN": "B07RF1XD36", "title": "Acer Aspire 5 Slim Laptop, 15.6 inches Full HD IPS Display, AMD Ryzen 3 3200U, Vega 3 Graphics, 4GB DDR4, 128GB SSD, Backlit Keyboard, Windows 10 in S Mode, A515-43-R19L,Silver", "price": "$461.70", "listPrice": "", "imageUrl": "https://m.media-amazon.com/images/I/41vMYgD92xL._SL160_.jpg", "detailPageURL": "https://www.amazon.com/dp/B07RF1XD36", "rating": "4.5", "totalReviews": "4756", "subtitle": "", "isPrimeEligible": "0", "converted_price": "424.567340 EUR", "email_status": "sent"}}

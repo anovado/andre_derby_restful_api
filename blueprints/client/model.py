@@ -36,7 +36,7 @@ class Clients(db.Model):
         self.client_key = client_key
         self.client_secret = client_secret
         self.status = status
-        # self.salt = salt
+        
     
     def __repr__(self):
         return '<Client %r>' % self.id

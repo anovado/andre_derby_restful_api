@@ -3,8 +3,6 @@ from flask import Blueprint
 from flask_restful import Api, Resource, reqparse
 from flask_jwt_extended import jwt_required
 from blueprints import app
-# from blueprints.amazon.resources import GetPriceReport
-# from blueprints.email.resources import PostEmail
 import re
 
 bp_conversion = Blueprint('conversion', __name__)
