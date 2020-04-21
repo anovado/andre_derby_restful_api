@@ -24,6 +24,7 @@ class Config():
     X_APIKEY = cfg['amazon']['key2']
     EMAIL_KEY = cfg['email']['api_key']
     EMAIL_SECRET = cfg['email']['api_secret']
+    WEATHER_KEY = cfg['weather']['api_key']
     
     
 class DevelopmentConfig(Config):
