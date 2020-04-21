@@ -13,11 +13,8 @@ api = Api(bp_email)
 class PostEmail(Resource):
     # url = 
   
-    def Post(self):
-        getprice = GetPriceReport()
-        returned_data = getprice.get()
-        search_result = returned_data[0][0]
-        
+    def post(self, template):
+    
         parser = reqparse.RequestParser()
         parser.add_argument('name', location='args', default=None)
         parser.add_argument('email', location='args', default=None)
@@ -32,7 +29,7 @@ class PostEmail(Resource):
             {
               "From": {
                 "Email": "andrenovado@gmail.com",
-                "Name": args['name'],
+                "Name": "Derby Prayogo",
               },
               "To": [
                 {
@@ -40,9 +37,9 @@ class PostEmail(Resource):
                 "Name": args['name'],
                 }
               ],
-              "Subject": f"Information about {search_result['title']}",
+              "Subject": "Recommendation of Products for Your Holiday's Destination",
               "TextPart": "Information product from Amazon",
-              "HTMLPart": f"<h2>{search_result['title']}</h2><br /><h5>Price: {search_result['price']}</h5><img src='{search_result['imageUrl']}' alt='Product image'><br /><h5>Rating: {search_result['rating']}</h5><h5>Total Reviews: {search_result['totalReviews']}</h5><br /><a href='{search_result['detailPageURL']}''>See more details here...</a>",
+              "HTMLPart": template,
               "CustomID": "AppGettingStartedTest"
             }
           ]

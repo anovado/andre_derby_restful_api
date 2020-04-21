@@ -17,13 +17,15 @@ class Config():
     )
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     # JWT_ACCESS_TOKEN_EXPIRES = timedelta(days=1)
-    # JWT_SECRET_KEY = cfg['jwt']['secret_key']
+    JWT_SECRET_KEY = cfg['jwt']['secret_key']
     HOST_MATAUANG = cfg['matauang']['host1']
     KEY_MATAUANG = cfg['matauang']['key1']
     X_HOST = cfg['amazon']['host2']
     X_APIKEY = cfg['amazon']['key2']
     EMAIL_KEY = cfg['email']['api_key']
     EMAIL_SECRET = cfg['email']['api_secret']
+    WIO_HOST = cfg['weather']['wio_host']
+    WIO_KEY = cfg['weather']['wio_key']
     
     
 class DevelopmentConfig(Config):
