@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 [2020-04-19 20:40:46,689]{/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask/app.py:1892} ERROR - Exception on /conversion/con [GET]
 Traceback (most recent call last):
   File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/urllib3/connection.py", line 160, in _new_conn
@@ -78,6 +79,46 @@ Traceback (most recent call last):
 ValueError: could not convert string to float: '44,99\xa0€'
 [2020-04-19 20:42:35,956]{/home/andrenovado/Documents/Coding/Alterra/andre_derby_restful_api/blueprints/__init__.py:59} ERROR - REQUEST_LOG	{"method": "GET", "code": "500 INTERNAL SERVER ERROR", "uri": "/conversion/con?keywords=phone&marketplace=FR&origin_currency=EUR&target_currency=IDR&name=Andre&email=andrenovado@gmail.com", "request": null, "response": {"message": "Internal Server Error"}}
 [2020-04-19 20:59:08,192]{/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask/app.py:1892} ERROR - Exception on /conversion/con [GET]
+=======
+[2020-04-19 20:40:01,608]{/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask/app.py:1892} ERROR - Exception on /conversion/con [GET]
+Traceback (most recent call last):
+  File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/urllib3/connection.py", line 160, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+  File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/urllib3/util/connection.py", line 61, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "/usr/lib/python3.6/socket.py", line 745, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/urllib3/connectionpool.py", line 677, in urlopen
+    chunked=chunked,
+  File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/urllib3/connectionpool.py", line 381, in _make_request
+    self._validate_conn(conn)
+  File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/urllib3/connectionpool.py", line 976, in _validate_conn
+    conn.connect()
+  File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/urllib3/connection.py", line 308, in connect
+    conn = self._new_conn()
+  File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/urllib3/connection.py", line 172, in _new_conn
+    self, "Failed to establish a new connection: %s" % e
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x7f62cc7d5f28>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/requests/adapters.py", line 449, in send
+    timeout=timeout
+  File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/urllib3/connectionpool.py", line 725, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/urllib3/util/retry.py", line 439, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='amazon-price1.p.rapidapi.com', port=443): Max retries exceeded with url: /search?keywords=bike&marketplace=US (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f62cc7d5f28>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution',))
+
+During handling of the above exception, another exception occurred:
+
+>>>>>>> Stashed changes
 Traceback (most recent call last):
   File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask/app.py", line 1950, in full_dispatch_request
     rv = self.dispatch_request()
@@ -89,7 +130,24 @@ Traceback (most recent call last):
     return self.dispatch_request(*args, **kwargs)
   File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask_restful/__init__.py", line 583, in dispatch_request
     resp = meth(*args, **kwargs)
+<<<<<<< Updated upstream
   File "/home/andrenovado/Documents/Coding/Alterra/andre_derby_restful_api/blueprints/conversion/resources.py", line 36, in get
     price = float((re.findall("[0-9]+,?.?[0-9]+", string_price))[0])
 ValueError: could not convert string to float: '144,99'
 [2020-04-19 20:59:08,197]{/home/andrenovado/Documents/Coding/Alterra/andre_derby_restful_api/blueprints/__init__.py:59} ERROR - REQUEST_LOG	{"method": "GET", "code": "500 INTERNAL SERVER ERROR", "uri": "/conversion/con?keywords=phone&marketplace=FR&origin_currency=EUR&target_currency=IDR&name=Andre&email=andrenovado@gmail.com", "request": null, "response": {"message": "Internal Server Error"}}
+=======
+  File "/home/andrenovado/Documents/Coding/Alterra/andre_derby_restful_api/blueprints/conversion/resources.py", line 21, in get
+    returned_data = getprice.get()
+  File "/home/andrenovado/Documents/Coding/Alterra/andre_derby_restful_api/blueprints/amazon/resources.py", line 33, in get
+    response = requests.request('GET', self.url, headers=headers, params=querystring)
+  File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/requests/api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/requests/sessions.py", line 530, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/requests/sessions.py", line 643, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/requests/adapters.py", line 516, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='amazon-price1.p.rapidapi.com', port=443): Max retries exceeded with url: /search?keywords=bike&marketplace=US (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f62cc7d5f28>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution',))
+[2020-04-19 20:40:01,613]{/home/andrenovado/Documents/Coding/Alterra/andre_derby_restful_api/blueprints/__init__.py:59} ERROR - REQUEST_LOG	{"method": "GET", "code": "500 INTERNAL SERVER ERROR", "uri": "/conversion/con?keywords=bike&marketplace=US&origin_currency=USD&target_currency=IDR&name=Andre&email=andrenovado@gmail.com", "request": null, "response": {"message": "Internal Server Error"}}
+>>>>>>> Stashed changes

@@ -17,7 +17,6 @@ class Users(db.Model):
     updated_at = db.Column(db.DateTime(timezone=True), onupdate=db.func.now())
     deleted_at = db.Column(db.DateTime)
     client_id = db.Column(db.Integer, db.ForeignKey('client.id'))
-    rent = db.relationship('Rents', backref='user', lazy=True)
  
 
     response_field = {

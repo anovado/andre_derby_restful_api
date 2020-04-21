@@ -7,3 +7,5 @@ flask-script
 flask-jwt-extended
 requests
 mailjet-rest
+pytest
+werkzeug

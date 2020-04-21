@@ -60,7 +60,7 @@ class ClientResource(Resource):
     def __init__(self):
         pass
 
-    @internal_required
+    # @internal_required
     def post(self):
         parser = reqparse.RequestParser()
         parser.add_argument('client_key', location='json', required=True)
@@ -72,7 +72,7 @@ class ClientResource(Resource):
         encoded = ('%s%s' % (data['client_secret'], salt)).encode('utf-8')
         hash_pass = hashlib.sha512(encoded).hexdigest()
         
-        client = Clients(data['client_key'], hash_pass, data['status'], salt)
+        client = Clients(data['client_key'], hash_pass, salt, data['status'])
         db.session.add(client)
         db.session.commit()
         
