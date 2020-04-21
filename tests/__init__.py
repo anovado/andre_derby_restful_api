@@ -27,8 +27,8 @@ def init_database():
     hashpass = hashlib.sha512(encoded).hexdigest()
     encoded2 = ('%s%s' %("alta123", salt)).encode('utf-8')
     hashpass2 = hashlib.sha512(encoded2).hexdigest()
-    client_internal = Clients(client_key='internal', client_secret=hashpass, salt=salt, status=True)
-    client_noninternal = Clients(client_key='client1', client_secret=hashpass2, salt=salt, status=False)    
+    client_internal = Clients(client_key='internal', client_secret=hashpass, salt=salt, status="True")
+    client_noninternal = Clients(client_key='client1', client_secret=hashpass2, salt=salt, status="False")    
     db.session.add(client_internal)
     db.session.add(client_noninternal)
     
