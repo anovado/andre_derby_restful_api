@@ -79,4 +79,7 @@ app.register_blueprint(bp_amazon, url_prefix='/amazon')
 from blueprints.email.resources import bp_email
 app.register_blueprint(bp_email, url_prefix='/email')
 
+from blueprints.weather.resources import bp_weather
+app.register_blueprint(bp_weather, url_prefix='/weather')
+
 db.create_all()
