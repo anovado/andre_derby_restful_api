@@ -60,7 +60,7 @@ class ClientResource(Resource):
     def __init__(self):
         pass
 
-    # @internal_required
+    @internal_required
     def post(self):
         parser = reqparse.RequestParser()
         parser.add_argument('client_key', location='json', required=True)
@@ -117,6 +117,7 @@ class ClientResource(Resource):
         db.session.commit()
         return {'status':'DELETED'}, 200
 
+    @internal_required
     def patch(self):
         return 'Not yet implemented', 501
 

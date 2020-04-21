@@ -2,7 +2,7 @@ import requests, math
 from flask import Blueprint
 from flask_restful import Api, reqparse, Resource
 from flask_jwt_extended import jwt_required
-from blueprints import app
+from blueprints import app, internal_required
 from blueprints.amazon.resources import GetPriceReport
 from blueprints.email.resources import PostEmail
 
@@ -13,7 +13,7 @@ class PublicGetCurrentWeather(Resource):
     wio_host = app.config['WIO_HOST']
     wio_apikey = app.config['WIO_KEY']
         
-    # @jwt_required
+    @internal_required
     def get(self):
         parser = reqparse.RequestParser()
         parser.add_argument('city', location='args', default=None)
@@ -78,6 +78,5 @@ class PublicGetCurrentWeather(Resource):
         template_toprint = ''.join(map(str, template))    
         PostEmail().post(template_toprint)
         return search_result, 200
-
 
 api.add_resource(PublicGetCurrentWeather, '/q')
