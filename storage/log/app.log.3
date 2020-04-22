@@ -1,51 +1,5 @@
-[2020-04-21 23:05:16,826]{/home/alta8/Documents/virtualenv/project_restapi/lib/python3.6/site-packages/flask/app.py:1892} ERROR - Exception on /weather/q [GET]
-Traceback (most recent call last):
-  File "/home/alta8/Documents/virtualenv/project_restapi/lib/python3.6/site-packages/flask/app.py", line 1950, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/home/alta8/Documents/virtualenv/project_restapi/lib/python3.6/site-packages/flask/app.py", line 1936, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/alta8/Documents/virtualenv/project_restapi/lib/python3.6/site-packages/flask_restful/__init__.py", line 468, in wrapper
-    resp = resource(*args, **kwargs)
-  File "/home/alta8/Documents/virtualenv/project_restapi/lib/python3.6/site-packages/flask/views.py", line 89, in view
-    return self.dispatch_request(*args, **kwargs)
-  File "/home/alta8/Documents/virtualenv/project_restapi/lib/python3.6/site-packages/flask_restful/__init__.py", line 583, in dispatch_request
-    resp = meth(*args, **kwargs)
-  File "/home/alta8/Documents/RESTAPI/andre_derby_restful_api/blueprints/__init__.py", line 20, in wrapper
-    verify_jwt_in_request()
-  File "/home/alta8/Documents/virtualenv/project_restapi/lib/python3.6/site-packages/flask_jwt_extended/view_decorators.py", line 32, in verify_jwt_in_request
-    jwt_data, jwt_header = _decode_jwt_from_request(request_type='access')
-  File "/home/alta8/Documents/virtualenv/project_restapi/lib/python3.6/site-packages/flask_jwt_extended/view_decorators.py", line 314, in _decode_jwt_from_request
-    raise NoAuthorizationError(errors[0])
-flask_jwt_extended.exceptions.NoAuthorizationError: Missing Authorization Header
-[2020-04-21 23:05:16,831]{/home/alta8/Documents/RESTAPI/andre_derby_restful_api/blueprints/__init__.py:65} ERROR - REQUEST_LOG	{"method": "GET", "code": "500 INTERNAL SERVER ERROR", "uri": "/weather/q?city=london&name=derby&email=derbyprayogo@gmail.com&target_currency=IDR", "request": null, "response": {"message": "Internal Server Error"}}
-[2020-04-22 08:29:36,635]{/home/alta8/Documents/virtualenv/project_restapi/lib/python3.6/site-packages/flask/app.py:1892} ERROR - Exception on /client [GET]
-Traceback (most recent call last):
-  File "/home/alta8/Documents/virtualenv/project_restapi/lib/python3.6/site-packages/flask/app.py", line 1950, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/home/alta8/Documents/virtualenv/project_restapi/lib/python3.6/site-packages/flask/app.py", line 1936, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/alta8/Documents/virtualenv/project_restapi/lib/python3.6/site-packages/flask_restful/__init__.py", line 468, in wrapper
-    resp = resource(*args, **kwargs)
-  File "/home/alta8/Documents/virtualenv/project_restapi/lib/python3.6/site-packages/flask/views.py", line 89, in view
-    return self.dispatch_request(*args, **kwargs)
-  File "/home/alta8/Documents/virtualenv/project_restapi/lib/python3.6/site-packages/flask_restful/__init__.py", line 583, in dispatch_request
-    resp = meth(*args, **kwargs)
-  File "/home/alta8/Documents/RESTAPI/andre_derby_restful_api/blueprints/__init__.py", line 20, in wrapper
-    verify_jwt_in_request()
-  File "/home/alta8/Documents/virtualenv/project_restapi/lib/python3.6/site-packages/flask_jwt_extended/view_decorators.py", line 32, in verify_jwt_in_request
-    jwt_data, jwt_header = _decode_jwt_from_request(request_type='access')
-  File "/home/alta8/Documents/virtualenv/project_restapi/lib/python3.6/site-packages/flask_jwt_extended/view_decorators.py", line 314, in _decode_jwt_from_request
-    raise NoAuthorizationError(errors[0])
-flask_jwt_extended.exceptions.NoAuthorizationError: Missing Authorization Header
-[2020-04-22 08:29:36,641]{/home/alta8/Documents/RESTAPI/andre_derby_restful_api/blueprints/__init__.py:65} ERROR - REQUEST_LOG	{"method": "GET", "code": "500 INTERNAL SERVER ERROR", "uri": "/client?", "request": {"client_key": "client1", "client_secret": "alta123", "status": "False"}, "response": {"message": "Internal Server Error"}}
-[2020-04-22 08:32:18,377]{/home/alta8/Documents/virtualenv/project_restapi/lib/python3.6/site-packages/flask/app.py:1892} ERROR - Exception on /client [GET]
-Traceback (most recent call last):
-  File "/home/alta8/Documents/virtualenv/project_restapi/lib/python3.6/site-packages/jwt/api_jws.py", line 180, in _load
-    signing_input, crypto_segment = jwt.rsplit(b'.', 1)
-ValueError: not enough values to unpack (expected 2, got 1)
-
-During handling of the above exception, another exception occurred:
-
+[2020-04-22 09:42:48,645]{/home/alta8/Documents/RESTAPI/andre_derby_restful_api/blueprints/__init__.py:55} WARNING - REQUEST_LOG	{"method": "GET", "code": "200 OK", "uri": "/auth?client_key=client1&client_secret=alta123", "request": null, "response": {"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1ODc1MjMzNjgsIm5iZiI6MTU4NzUyMzM2OCwianRpIjoiMzE0ZjBjYjYtYmI5ZC00YWZhLWIxZjItMmQ4MTE1NTNmM2FlIiwiZXhwIjoxNTg3NjA5NzY4LCJpZGVudGl0eSI6ImNsaWVudDEiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MiLCJ1c2VyX2NsYWltcyI6eyJjbGllbnRfa2V5IjoiY2xpZW50MSIsInN0YXR1cyI6IkZhbHNlIiwiaWRlbnRpZmllciI6ImFtYXpvbiBwcm9qZWN0In19.pG_z_mICkYL7sPhP5VrBY8a4jS5uqzK8P5FuVxeYnXQ"}}
+[2020-04-22 09:43:07,182]{/home/alta8/Documents/virtualenv/project_restapi/lib/python3.6/site-packages/flask/app.py:1892} ERROR - Exception on /weather/q [GET]
 Traceback (most recent call last):
   File "/home/alta8/Documents/virtualenv/project_restapi/lib/python3.6/site-packages/flask/app.py", line 1950, in full_dispatch_request
     rv = self.dispatch_request()
@@ -63,49 +17,25 @@ Traceback (most recent call last):
     jwt_data, jwt_header = _decode_jwt_from_request(request_type='access')
   File "/home/alta8/Documents/virtualenv/project_restapi/lib/python3.6/site-packages/flask_jwt_extended/view_decorators.py", line 294, in _decode_jwt_from_request
     decoded_token = decode_token(encoded_token, csrf_token)
-  File "/home/alta8/Documents/virtualenv/project_restapi/lib/python3.6/site-packages/flask_jwt_extended/utils.py", line 91, in decode_token
-    encoded_token, verify=False, algorithms=config.decode_algorithms
-  File "/home/alta8/Documents/virtualenv/project_restapi/lib/python3.6/site-packages/jwt/api_jwt.py", line 84, in decode
-    payload, _, _, _ = self._load(jwt)
-  File "/home/alta8/Documents/virtualenv/project_restapi/lib/python3.6/site-packages/jwt/api_jws.py", line 183, in _load
-    raise DecodeError('Not enough segments')
-jwt.exceptions.DecodeError: Not enough segments
-[2020-04-22 08:32:18,380]{/home/alta8/Documents/RESTAPI/andre_derby_restful_api/blueprints/__init__.py:65} ERROR - REQUEST_LOG	{"method": "GET", "code": "500 INTERNAL SERVER ERROR", "uri": "/client?", "request": {"client_key": "client1", "client_secret": "alta123", "status": "False"}, "response": {"message": "Internal Server Error"}}
-[2020-04-22 08:32:40,041]{/home/alta8/Documents/virtualenv/project_restapi/lib/python3.6/site-packages/flask/app.py:1892} ERROR - Exception on /client [GET]
-Traceback (most recent call last):
-  File "/home/alta8/Documents/virtualenv/project_restapi/lib/python3.6/site-packages/jwt/api_jws.py", line 186, in _load
-    header_data = base64url_decode(header_segment)
-  File "/home/alta8/Documents/virtualenv/project_restapi/lib/python3.6/site-packages/jwt/utils.py", line 42, in base64url_decode
-    return base64.urlsafe_b64decode(input)
-  File "/usr/lib/python3.6/base64.py", line 133, in urlsafe_b64decode
-    return b64decode(s)
-  File "/usr/lib/python3.6/base64.py", line 87, in b64decode
-    return binascii.a2b_base64(s)
-binascii.Error: Incorrect padding
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/alta8/Documents/virtualenv/project_restapi/lib/python3.6/site-packages/flask/app.py", line 1950, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/home/alta8/Documents/virtualenv/project_restapi/lib/python3.6/site-packages/flask/app.py", line 1936, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/alta8/Documents/virtualenv/project_restapi/lib/python3.6/site-packages/flask_restful/__init__.py", line 468, in wrapper
-    resp = resource(*args, **kwargs)
-  File "/home/alta8/Documents/virtualenv/project_restapi/lib/python3.6/site-packages/flask/views.py", line 89, in view
-    return self.dispatch_request(*args, **kwargs)
-  File "/home/alta8/Documents/virtualenv/project_restapi/lib/python3.6/site-packages/flask_restful/__init__.py", line 583, in dispatch_request
-    resp = meth(*args, **kwargs)
-  File "/home/alta8/Documents/RESTAPI/andre_derby_restful_api/blueprints/__init__.py", line 20, in wrapper
-    verify_jwt_in_request()
-  File "/home/alta8/Documents/virtualenv/project_restapi/lib/python3.6/site-packages/flask_jwt_extended/view_decorators.py", line 32, in verify_jwt_in_request
-    jwt_data, jwt_header = _decode_jwt_from_request(request_type='access')
-  File "/home/alta8/Documents/virtualenv/project_restapi/lib/python3.6/site-packages/flask_jwt_extended/view_decorators.py", line 294, in _decode_jwt_from_request
-    decoded_token = decode_token(encoded_token, csrf_token)
-  File "/home/alta8/Documents/virtualenv/project_restapi/lib/python3.6/site-packages/flask_jwt_extended/utils.py", line 91, in decode_token
-    encoded_token, verify=False, algorithms=config.decode_algorithms
-  File "/home/alta8/Documents/virtualenv/project_restapi/lib/python3.6/site-packages/jwt/api_jwt.py", line 84, in decode
-    payload, _, _, _ = self._load(jwt)
-  File "/home/alta8/Documents/virtualenv/project_restapi/lib/python3.6/site-packages/jwt/api_jws.py", line 188, in _load
-    raise DecodeError('Invalid header padding')
-jwt.exceptions.DecodeError: Invalid header padding
+  File "/home/alta8/Documents/virtualenv/project_restapi/lib/python3.6/site-packages/flask_jwt_extended/utils.py", line 118, in decode_token
+    allow_expired=allow_expired
+  File "/home/alta8/Documents/virtualenv/project_restapi/lib/python3.6/site-packages/flask_jwt_extended/tokens.py", line 140, in decode_jwt
+    leeway=leeway, options=options, issuer=issuer)
+  File "/home/alta8/Documents/virtualenv/project_restapi/lib/python3.6/site-packages/jwt/api_jwt.py", line 92, in decode
+    jwt, key=key, algorithms=algorithms, options=options, **kwargs
+  File "/home/alta8/Documents/virtualenv/project_restapi/lib/python3.6/site-packages/jwt/api_jws.py", line 156, in decode
+    key, algorithms)
+  File "/home/alta8/Documents/virtualenv/project_restapi/lib/python3.6/site-packages/jwt/api_jws.py", line 223, in _verify_signature
+    raise InvalidSignatureError('Signature verification failed')
+jwt.exceptions.InvalidSignatureError: Signature verification failed
+[2020-04-22 09:43:07,184]{/home/alta8/Documents/RESTAPI/andre_derby_restful_api/blueprints/__init__.py:65} ERROR - REQUEST_LOG	{"method": "GET", "code": "500 INTERNAL SERVER ERROR", "uri": "/weather/q?city=london&name=derby&email=derbyprayogo@gmail.com&target_currency=IDR", "request": null, "response": {"message": "Internal Server Error"}}
+[2020-04-22 09:43:14,934]{/home/alta8/Documents/RESTAPI/andre_derby_restful_api/blueprints/__init__.py:65} ERROR - REQUEST_LOG	{"method": "GET", "code": "403 FORBIDDEN", "uri": "/weather/q?city=london&name=derby&email=derbyprayogo@gmail.com&target_currency=IDR", "request": null, "response": {"status": "FORBIDDEN", "message": "Internal Only!"}}
+[2020-04-22 09:54:29,229]{/home/alta8/Documents/RESTAPI/andre_derby_restful_api/blueprints/__init__.py:55} WARNING - REQUEST_LOG	{"method": "GET", "code": "200 OK", "uri": "/client?", "request": null, "response": [{"id": 1, "client_key": "internal", "client_secret": "4a0c0513007f2616ef99f4bf95fa2c538088b6e94e189151a5a2bf376d9c8dd4a26f9c50cc84d02b7e563890fa8bf5dadb3ab0977f57c92a7f428fa48d899641", "salt": "25be89a5b9f545ae8b47c4d478b6ce27", "status": "True", "created_at": "Tue, 21 Apr 2020 18:46:45 -0000", "updated_at": null, "deleted_at": null}, {"id": 2, "client_key": "client1", "client_secret": "d3558f2eb8b06d60d766bc5bf28cc8a4ed2fd2e42073886b3c148b055600f1285ccf1b23b27cd5096b6f45ebd9e80d6f4efaed5981619aba710e1619a44a4157", "salt": "3e8c8ac9403b49c9938c92865a5b4fe1", "status": "False", "created_at": "Tue, 21 Apr 2020 18:47:25 -0000", "updated_at": null, "deleted_at": null}]}
+[2020-04-22 09:54:51,890]{/home/alta8/Documents/RESTAPI/andre_derby_restful_api/blueprints/__init__.py:55} WARNING - REQUEST_LOG	{"method": "GET", "code": "200 OK", "uri": "/client/1?", "request": null, "response": {"id": 1, "client_key": "internal", "client_secret": "4a0c0513007f2616ef99f4bf95fa2c538088b6e94e189151a5a2bf376d9c8dd4a26f9c50cc84d02b7e563890fa8bf5dadb3ab0977f57c92a7f428fa48d899641", "salt": "25be89a5b9f545ae8b47c4d478b6ce27", "status": "True", "created_at": "Tue, 21 Apr 2020 18:46:45 -0000", "updated_at": null, "deleted_at": null}}
+[2020-04-22 09:56:42,397]{/home/alta8/Documents/RESTAPI/andre_derby_restful_api/blueprints/__init__.py:55} WARNING - REQUEST_LOG	{"method": "POST", "code": "200 OK", "uri": "/client?", "request": {"client_key": "bagas", "client_secret": "bagas", "status": "False"}, "response": {"id": 3, "client_key": "bagas", "client_secret": "fc5d5aa670f5a3e244b1b8c28b09f6c61127ad3afb0a880e980d28259ccbe7ec3f2f039f9ffdcb247b901d67640e6612286c900c5a734537b640a0d0a179851d", "salt": "923b97e9d77543a585ec640fe6409c11", "status": "False", "created_at": "Wed, 22 Apr 2020 09:56:42 -0000", "updated_at": null, "deleted_at": null}}
+[2020-04-22 09:57:27,093]{/home/alta8/Documents/RESTAPI/andre_derby_restful_api/blueprints/__init__.py:55} WARNING - REQUEST_LOG	{"method": "PUT", "code": "200 OK", "uri": "/client/3?", "request": {"client_key": "soleh", "client_secret": "soleh", "status": "False"}, "response": {"id": 3, "client_key": "soleh", "client_secret": "soleh", "salt": "923b97e9d77543a585ec640fe6409c11", "status": "False", "created_at": "Wed, 22 Apr 2020 09:56:42 -0000", "updated_at": "Wed, 22 Apr 2020 09:57:27 -0000", "deleted_at": null}}
+[2020-04-22 09:57:41,915]{/home/alta8/Documents/RESTAPI/andre_derby_restful_api/blueprints/__init__.py:55} WARNING - REQUEST_LOG	{"method": "DELETE", "code": "200 OK", "uri": "/client/3?", "request": null, "response": {"status": "DELETED"}}
+[2020-04-22 09:57:51,078]{/home/alta8/Documents/RESTAPI/andre_derby_restful_api/blueprints/__init__.py:65} ERROR - REQUEST_LOG	{"method": "GET", "code": "404 NOT FOUND", "uri": "/client/3?", "request": null, "response": {"status": "NOT_FOUND"}}
+[2020-04-22 09:57:56,780]{/home/alta8/Documents/RESTAPI/andre_derby_restful_api/blueprints/__init__.py:55} WARNING - REQUEST_LOG	{"method": "GET", "code": "200 OK", "uri": "/client?", "request": null, "response": [{"id": 1, "client_key": "internal", "client_secret": "4a0c0513007f2616ef99f4bf95fa2c538088b6e94e189151a5a2bf376d9c8dd4a26f9c50cc84d02b7e563890fa8bf5dadb3ab0977f57c92a7f428fa48d899641", "salt": "25be89a5b9f545ae8b47c4d478b6ce27", "status": "True", "created_at": "Tue, 21 Apr 2020 18:46:45 -0000", "updated_at": null, "deleted_at": null}, {"id": 2, "client_key": "client1", "client_secret": "d3558f2eb8b06d60d766bc5bf28cc8a4ed2fd2e42073886b3c148b055600f1285ccf1b23b27cd5096b6f45ebd9e80d6f4efaed5981619aba710e1619a44a4157", "salt": "3e8c8ac9403b49c9938c92865a5b4fe1", "status": "False", "created_at": "Tue, 21 Apr 2020 18:47:25 -0000", "updated_at": null, "deleted_at": null}]}
+[2020-04-22 10:13:15,051]{/home/alta8/Documents/RESTAPI/andre_derby_restful_api/blueprints/__init__.py:55} WARNING - REQUEST_LOG	{"method": "GET", "code": "200 OK", "uri": "/client?", "request": null, "response": [{"id": 1, "client_key": "internal", "client_secret": "4a0c0513007f2616ef99f4bf95fa2c538088b6e94e189151a5a2bf376d9c8dd4a26f9c50cc84d02b7e563890fa8bf5dadb3ab0977f57c92a7f428fa48d899641", "salt": "25be89a5b9f545ae8b47c4d478b6ce27", "status": "True", "created_at": "Tue, 21 Apr 2020 18:46:45 -0000", "updated_at": null, "deleted_at": null}, {"id": 2, "client_key": "client1", "client_secret": "d3558f2eb8b06d60d766bc5bf28cc8a4ed2fd2e42073886b3c148b055600f1285ccf1b23b27cd5096b6f45ebd9e80d6f4efaed5981619aba710e1619a44a4157", "salt": "3e8c8ac9403b49c9938c92865a5b4fe1", "status": "False", "created_at": "Tue, 21 Apr 2020 18:47:25 -0000", "updated_at": null, "deleted_at": null}]}
+[2020-04-22 10:16:16,899]{/home/alta8/Documents/RESTAPI/andre_derby_restful_api/blueprints/__init__.py:55} WARNING - REQUEST_LOG	{"method": "POST", "code": "200 OK", "uri": "/client?", "request": {"client_key": "alta123", "client_secret": "alta123", "status": "false"}, "response": {"id": 4, "client_key": "alta123", "client_secret": "d6ebbe3910b875e8f27f3a02f31d36ff747799ccdcb6c985c20b7645e63c34b879ecb714d5ea12f2d987f041d23874af46412861f2dc238f58f6d650527ec687", "salt": "5b2de6440b6f4452b653571efd6c6519", "status": "false", "created_at": "Wed, 22 Apr 2020 10:16:16 -0000", "updated_at": null, "deleted_at": null}}
