@@ -2,7 +2,7 @@ from flask import Blueprint
 from flask_restful import Api, Resource, marshal, reqparse, inputs
 from .model import Users
 from sqlalchemy import desc
-from blueprints impot internal_required
+from blueprints import internal_required
 import hashlib, uuid
 
 from blueprints import db, app, internal_required

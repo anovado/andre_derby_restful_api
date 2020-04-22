@@ -26,9 +26,9 @@ class CreateTokenResource(Resource):
             hash_pass = hashlib.sha512(encoded).hexdigest()
             
             if hash_pass == qry.client_secret:
-                qry = marshal(qry, Clients.jwt_claim_fields)
+                qry = marshal(qry, Clients.jwt_claims_fields)
                 qry['identifier'] = 'amazon project'
-                qry['status'] = False
+                # qry['status'] = False
                 token = create_access_token(identity=args['client_key'], user_claims=qry)
                 return {'token':token}, 200
             

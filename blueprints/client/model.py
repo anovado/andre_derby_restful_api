@@ -29,7 +29,7 @@ class Clients(db.Model):
         'deleted_at':fields.DateTime,
     }
     
-    jwt_claim_fields =  {
+    jwt_claims_fields =  {
         'client_key': fields.String,
         'status':fields.String
     }
