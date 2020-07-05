@@ -15,8 +15,9 @@ This project uses 4 APIs:
 | 4 | [Mailjet](https://www.mailjet.com/) |
 
 
-Developer:
-Andre Novado and [Derby Prayogo](https://github.com/derbyps)
+Developers:
+- [Andre Novado](https://www.linkedin.com/in/andre-novado/) 
+- [Derby Prayogo](https://github.com/derbyps)
 
 P.S:
 Because we used the free trial for the Amazon Price API, this program will not work unless you subscribe to this API.
